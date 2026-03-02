@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { DividerModule } from 'primeng/divider';
-import { InputTextModule } from 'primeng/inputtext';
+import { NavigationService } from '../../genericFuntion';
 
 @Component({
   selector: 'app-login',
-  imports: [ButtonModule, DividerModule, InputTextModule],
+  imports: [],
   templateUrl: './login.html',
   styleUrl: './login.css',
-  standalone: true, 
 })
-export class Login {}
+
+export class Login{
+
+  constructor(private navigationService: NavigationService){}
+
+  login():void{
+    this.navigationService.goTo('registro');
+  }
+
+}
