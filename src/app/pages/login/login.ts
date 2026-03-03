@@ -11,7 +11,9 @@ import { NavigationService } from '../../genericFuntion';
 export class Login{
 
   constructor(private navigationService: NavigationService){}
-
+  register():void{
+    this.navigationService.goTo('role')
+  }
   login():void{
     this.navigationService.goTo('registro');
   }

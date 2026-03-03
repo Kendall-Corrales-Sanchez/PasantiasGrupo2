@@ -3,7 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { StepperModule } from 'primeng/stepper';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import { Student } from '../../entities/students';
+import { Student } from '../../entity/students';
 
 @Component({
   selector: 'app-student-register.component',
