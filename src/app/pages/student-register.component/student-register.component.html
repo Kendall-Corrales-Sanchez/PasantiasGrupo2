@@ -1,1 +1,91 @@
-<p>Register Student</p>
+<div class="card flex justify-center">
+    <p-stepper [value]="1" class="basis-[50rem]">
+        <p-step-list>
+            <p-step [value]="1">Header I</p-step>
+            <p-step [value]="2">Header II</p-step>
+            <p-step [value]="3">Header II</p-step>
+        </p-step-list>
+        <p-step-panels>
+            <p-step-panel [value]="1">
+                <ng-template #content let-activateCallback="activateCallback">
+
+                    <div class="form-wrapper">
+                        <div class="form-container">
+
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label>Nombres</label>
+                                    <input type="text" pInputText [(ngModel)]="name" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Apellidos</label>
+                                    <input type="text" pInputText [(ngModel)]="lastName" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Correo</label>
+                                    <input type="email" pInputText [(ngModel)]="mail" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Contraseña</label>
+                                    <input type="password" pInputText [(ngModel)]="password" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Fecha de Nacimiento</label>
+                                    <input type="text" pInputText [(ngModel)]="birthdate" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Provincia</label>
+                                    <input type="text" pInputText [(ngModel)]="province" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Carrera de Interés</label>
+                                    <input type="text" pInputText [(ngModel)]="carrerInterest" />
+                                </div>
+                            </div>
+
+                            <div class="boton">
+                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                    (onClick)="activateCallback(2)" />
+                            </div>
+
+                        </div>
+                    </div>
+                </ng-template>
+            </p-step-panel>
+            <p-step-panel [value]="2">
+                <ng-template #content let-activateCallback="activateCallback">
+                    <div class="flex flex-col h-48">
+                        <div
+                            class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
+                            Content II</div>
+                    </div>
+                    <div class="flex pt-6 justify-between">
+                        <p-button label="Back" severity="secondary" icon="pi pi-arrow-left"
+                            (onClick)="activateCallback(1)" />
+                        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                            (onClick)="activateCallback(3)" />
+                    </div>
+                </ng-template>
+            </p-step-panel>
+            <p-step-panel [value]="3">
+                <ng-template #content let-activateCallback="activateCallback">
+                    <div class="flex flex-col h-48">
+                        <div
+                            class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
+                            Content III</div>
+                    </div>
+                    <div class="flex pt-6 justify-start">
+                        <p-button label="Back" icon="pi pi-arrow-left" iconPos="right"
+                            (onClick)="activateCallback(2)" />
+                    </div>
+                </ng-template>
+            </p-step-panel>
+        </p-step-panels>
+    </p-stepper>
+</div>
