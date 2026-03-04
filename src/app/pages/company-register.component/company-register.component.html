@@ -2,24 +2,58 @@
     <p-stepper [value]="1" class="basis-[50rem]">
         <p-step-list>
             <p-step [value]="1">Header I</p-step>
-            <p-step [value]="2">Header II</p-step>
-            <p-step [value]="3">Header II</p-step>
+            <!--<p-step [value]="2">Header II</p-step>
+            <p-step [value]="3">Header II</p-step>-->
         </p-step-list>
         <p-step-panels>
             <p-step-panel [value]="1">
                 <ng-template #content let-activateCallback="activateCallback">
-                    <div class="flex flex-col h-48">
-                        <div
-                            class="border-2 border-dashed border-surface-200 dark:border-surface-700 rounded bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
-                            Content I</div>
-                    </div>
-                    <div class="flex pt-6 justify-end">
-                        <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                            (onClick)="activateCallback(2)" />
+
+                    <div class="form-wrapper">
+                        <div class="form-container">
+
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label>Nombre de la compañia</label>
+                                    <input type="text" pInputText [(ngModel)]="nameCompany" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Correo de la compañia</label>
+                                    <input type="email" pInputText [(ngModel)]="mail" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Contraseña</label>
+                                    <input type="password" pInputText [(ngModel)]="password" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Provincia de la Empresa</label>
+                                    <input type="text" pInputText [(ngModel)]="province" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Quienes somos?</label>
+                                    <input type="text" pInputText [(ngModel)]="WhoAreWe" />
+                                </div>
+
+                                <div class="field">
+                                    <label>Tipo de sector</label>
+                                    <input type="text" pInputText [(ngModel)]="sectorType" />
+                                </div>
+                            </div>
+
+                            <div class="boton">
+                                <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                    (onClick)="activateCallback(2)" />
+                            </div>
+
+                        </div>
                     </div>
                 </ng-template>
             </p-step-panel>
-            <p-step-panel [value]="2">
+            <!-- <p-step-panel [value]="2">
                 <ng-template #content let-activateCallback="activateCallback">
                     <div class="flex flex-col h-48">
                         <div
@@ -46,7 +80,7 @@
                             (onClick)="activateCallback(2)" />
                     </div>
                 </ng-template>
-            </p-step-panel>
+            </p-step-panel>-->
         </p-step-panels>
     </p-stepper>
 </div>

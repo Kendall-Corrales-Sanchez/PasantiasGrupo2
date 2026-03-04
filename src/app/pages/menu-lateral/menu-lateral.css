@@ -1,0 +1,153 @@
+/* ── Variables ── */
+:root {
+  --sidebar-width: 200px;
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e8eaf0;
+  --text-primary: #2d3748;
+  --text-muted: #718096;
+  --accent-blue: #3b82f6;
+  --hover-bg: #f0f4ff;
+  --active-bg: #e8f0fe;
+  --active-color: #1a56db;
+  --logout-color: #e53e3e;
+  --logout-hover: #fff5f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fb;
+}
+
+/* ── Layout principal ── */
+.layout-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+  z-index: 100;
+}
+
+.sidebar-content {
+  padding-top: 1.5rem;
+  flex: 1;
+}
+
+.sidebar-footer {
+  padding-bottom: 1rem;
+}
+
+/* ── Items del menú ── */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.sidebar-item:hover {
+  background: var(--hover-bg);
+  color: var(--active-color);
+}
+
+.sidebar-item.active {
+  background: var(--active-bg);
+  color: var(--active-color);
+  border-left-color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.sidebar-item.active .sidebar-icon i {
+  color: var(--active-color);
+}
+
+/* Ítem Principal */
+.sidebar-item.sidebar-brand {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.sidebar-item.sidebar-brand:hover {
+  color: var(--active-color);
+}
+
+/* Cerrar sesión */
+.sidebar-item.sidebar-logout {
+  color: var(--logout-color);
+}
+
+.sidebar-item.sidebar-logout:hover {
+  background: var(--logout-hover);
+  color: #c53030;
+}
+
+.sidebar-item.sidebar-logout .sidebar-icon i {
+  color: var(--logout-color);
+}
+
+/* ── Íconos ── */
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sidebar-icon i {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+/* Badge */
+.sidebar-badge {
+  position: absolute !important;
+  top: -6px !important;
+  right: -8px !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  font-size: 0.65rem !important;
+  padding: 0 4px !important;
+}
+
+/* Separador */
+.sidebar-divider {
+  height: 1px;
+  background: var(--sidebar-border);
+  margin: 0.5rem 1rem;
+}
+
+/* ── Contenido principal ── */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  background: #f5f7fb;
+}
