@@ -2,8 +2,8 @@
     <p-stepper [value]="1" class="basis-[50rem]">
         <p-step-list>
             <p-step [value]="1">Header I</p-step>
-            <p-step [value]="2">Header II</p-step>
-            <p-step [value]="3">Header II</p-step>
+            <!--<p-step [value]="2">Header II</p-step>
+            <p-step [value]="3">Header II</p-step> -->
         </p-step-list>
         <p-step-panels>
             <p-step-panel [value]="1">
@@ -51,14 +51,14 @@
 
                             <div class="boton">
                                 <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                    (onClick)="activateCallback(2)" />
+                                    (onClick)="activateCallback(2)"/>
                             </div>
 
                         </div>
                     </div>
                 </ng-template>
             </p-step-panel>
-            <p-step-panel [value]="2">
+            <!--<p-step-panel [value]="2">
                 <ng-template #content let-activateCallback="activateCallback">
                     <div class="flex flex-col h-48">
                         <div
@@ -85,7 +85,7 @@
                             (onClick)="activateCallback(2)" />
                     </div>
                 </ng-template>
-            </p-step-panel>
+            </p-step-panel> -->
         </p-step-panels>
     </p-stepper>
 </div>
