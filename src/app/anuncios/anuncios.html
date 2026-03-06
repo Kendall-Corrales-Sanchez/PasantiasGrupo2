@@ -1,0 +1,161 @@
+<!-- pasantias.component.html -->
+<div class="pasantias-container">
+
+  <!-- ===== FILTROS ===== -->
+  <div class="filter-bar">
+    <input
+      pInputText
+      class="filter-input"
+      placeholder="Nombre Puesto"
+      [(ngModel)]="filters.nombre"
+      (input)="onFilterChange()"
+    />
+
+    <input
+      pInputText
+      class="filter-input"
+      placeholder="Empresa"
+      [(ngModel)]="filters.empresa"
+      (input)="onFilterChange()"
+    />
+
+    <input
+      pInputText
+      class="filter-input"
+      placeholder="Carrera"
+      [(ngModel)]="filters.carrera"
+      (input)="onFilterChange()"
+    />
+
+    <input
+      pInputText
+      class="filter-input filter-input--sm"
+      placeholder="Remuneración"
+      [(ngModel)]="filters.remuneracion"
+      (input)="onFilterChange()"
+    />
+
+    <!-- PrimeNG v19+: p-select en lugar de p-dropdown -->
+    <p-select
+      [options]="modalidadOptions"
+      [(ngModel)]="filters.modalidad"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Modalidad"
+      styleClass="filter-select"
+      (onChange)="onFilterChange()"
+    />
+
+    <p-select
+      [options]="ubicacionOptions"
+      [(ngModel)]="filters.ubicacion"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Ubicación"
+      styleClass="filter-select"
+      (onChange)="onFilterChange()"
+    />
+
+    <p-button
+      label="Filtrar"
+      icon="pi pi-search"
+      styleClass="btn-filtrar"
+      (onClick)="aplicarFiltros()"
+    />
+  </div>
+
+  <!-- ===== DATA VIEW ===== -->
+  <p-dataview
+    [value]="pasantiasFiltradas"
+    [paginator]="true"
+    [rows]="rows"
+    [rowsPerPageOptions]="[6, 12, 24]"
+    [layout]="layout"
+    styleClass="pasantias-dataview"
+  >
+
+    <!-- Header: toggle de layout manual -->
+    <ng-template #header>
+      <div class="dataview-header">
+        <p-selectbutton
+          [options]="layoutOptions"
+          [(ngModel)]="layout"
+          optionValue="value"
+        >
+          <ng-template #item let-opt>
+            <i [class]="opt.icon"></i>
+          </ng-template>
+        </p-selectbutton>
+      </div>
+    </ng-template>
+
+    <!-- Vista GRID -->
+    <ng-template #grid let-items>
+      <div class="grid-wrapper">
+        @for (pasantia of items; track pasantia.id) {
+          <div class="grid-item-wrapper">
+            <div class="pasantia-card">
+              <div class="card-image">
+                <img [src]="pasantia.imagen || 'assets/placeholder.png'" [alt]="pasantia.nombre" />
+              </div>
+              <div class="card-body">
+                <p class="card-label">Pasantía:</p>
+                <p class="card-title">{{ pasantia.nombre }}</p>
+                <p class="card-detail"><span>Empresa:</span> {{ pasantia.empresa }}</p>
+                <p class="card-detail"><span>Carrera:</span> {{ pasantia.carrera }}</p>
+                <p class="card-detail"><span>Modalidad:</span> {{ pasantia.modalidad }}</p>
+                <p class="card-detail"><span>Ubicación:</span> {{ pasantia.ubicacion }}</p>
+                <p class="card-detail"><span>Remuneración:</span> {{ pasantia.remuneracion }}</p>
+                <p-button
+                  icon="pi pi-eye"
+                  label="Ver"
+                  styleClass="btn-ver"
+                  (onClick)="verDetalle(pasantia)"
+                />
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </ng-template>
+
+    <!-- Vista LIST -->
+    <ng-template #list let-items>
+      <div class="list-wrapper">
+        @for (pasantia of items; track pasantia.id) {
+          <div class="pasantia-list-card">
+            <div class="list-image">
+              <img [src]="pasantia.imagen || 'assets/placeholder.png'" [alt]="pasantia.nombre" />
+            </div>
+            <div class="list-body">
+              <p class="card-label">Pasantía: <strong>{{ pasantia.nombre }}</strong></p>
+              <p class="card-detail"><span>Empresa:</span> {{ pasantia.empresa }}</p>
+              <p class="card-detail"><span>Carrera:</span> {{ pasantia.carrera }}</p>
+              <p class="card-detail"><span>Modalidad:</span> {{ pasantia.modalidad }}</p>
+              <p class="card-detail"><span>Ubicación:</span> {{ pasantia.ubicacion }}</p>
+              <p class="card-detail"><span>Remuneración:</span> {{ pasantia.remuneracion }}</p>
+            </div>
+            <div class="list-actions">
+              <p-button
+                icon="pi pi-eye"
+                label="Ver"
+                styleClass="btn-ver"
+                (onClick)="verDetalle(pasantia)"
+              />
+            </div>
+          </div>
+        }
+      </div>
+    </ng-template>
+
+    <!-- Sin resultados -->
+    <ng-template #empty>
+      <div class="empty-state">
+        <i class="pi pi-inbox"></i>
+        <p>No se encontraron pasantías.</p>
+      </div>
+    </ng-template>
+
+  </p-dataview>
+
+</div>
