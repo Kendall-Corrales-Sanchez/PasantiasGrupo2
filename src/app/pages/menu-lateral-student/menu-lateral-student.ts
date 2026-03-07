@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-menu-lateral',
-  imports: [],
-  templateUrl: './menu-lateral.html',
-  styleUrl: './menu-lateral.css',
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './menu-lateral-student.html',
+  styleUrl: './menu-lateral-student.css',
 })
 export class MenuLateral {
 

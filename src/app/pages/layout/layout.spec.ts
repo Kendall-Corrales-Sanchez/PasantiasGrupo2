@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuLateral } from './menu-lateral';
+import { Layout } from './layout';
 
-describe('MenuLateral', () => {
-  let component: MenuLateral;
-  let fixture: ComponentFixture<MenuLateral>;
+describe('Layout', () => {
+  let component: Layout;
+  let fixture: ComponentFixture<Layout>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MenuLateral],
+      imports: [Layout],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MenuLateral);
+    fixture = TestBed.createComponent(Layout);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
