@@ -6,6 +6,7 @@ import { CompanyRegisterComponent } from './pages/company-register.component/com
 import { StudentRegisterComponent } from './pages/student-register.component/student-register.component';
 import { MenuLateral } from './pages/menu-lateral-student/menu-lateral-student';
 import { Layout } from './pages/layout/layout';
+import { Anuncios } from './anuncios/anuncios';
 
 export const routes: Routes = [
     {
@@ -41,7 +42,7 @@ export const routes: Routes = [
     path: 'menus',
     component: Layout,
     children: [
-      { path: 'principal', loadComponent: () => Login },
+      { path: 'principal', loadComponent: () => Anuncios },
       { path: 'perfil',    loadComponent: () => Register },
       { path: 'mensajeria', loadComponent: () => CompanyRegisterComponent },
       { path: 'notificaciones', loadComponent: () => ChooseRoleComponent },
