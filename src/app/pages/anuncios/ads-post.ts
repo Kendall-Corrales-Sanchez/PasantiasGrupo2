@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 import { DataView }  from 'primeng/dataview';
@@ -8,6 +8,7 @@ import { Button }    from 'primeng/button';
 import { Paginator } from 'primeng/paginator';
 import { SelectButton } from 'primeng/selectbutton';
 import { Ads } from '../../entity/ads';
+import { DrawerComponent } from '../drawer.component/drawer.component'
 
 @Component({
   selector:   'app-pasantias',
@@ -19,8 +20,9 @@ import { Ads } from '../../entity/ads';
     Select,
     InputText,
     Button,
-    SelectButton
-  ],
+    SelectButton,
+    DrawerComponent
+],
   templateUrl: './ads-post.html',
   styleUrls:   ['./ads-post.css']
 })
@@ -100,6 +102,10 @@ export class Anuncios implements OnInit, Ads{
   /** Aplica todos los filtros activos y actualiza pasantiasFiltradas */
   aplicarFiltros(): void {}
 
-  /** Abre el detalle / modal de una pasantía seleccionada */
-  verDetalle(ads: Ads): void {}
+  @ViewChild(DrawerComponent)
+  drawerRef!: DrawerComponent;
+
+  verDetalle(ads: Ads): void {
+    this.drawerRef.abrir(ads);   // ← abre el drawer y le pasa la pasantía
+  }
 }
