@@ -6,7 +6,7 @@ import { CompanyRegisterComponent } from './pages/company-register.component/com
 import { StudentRegisterComponent } from './pages/student-register.component/student-register.component';
 import { MenuLateral } from './pages/menu-lateral-student/menu-lateral-student';
 import { Layout } from './pages/layout/layout';
-import { Anuncios } from './anuncios/anuncios';
+import { Anuncios } from './pages/anuncios/ads-post';
 
 export const routes: Routes = [
     {
