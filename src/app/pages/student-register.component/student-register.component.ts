@@ -12,5 +12,12 @@ import { Student } from '../../entity/students';
   styleUrl: './student-register.component.css',
 })
 
-export class StudentRegisterComponent extends Student{
+export class StudentRegisterComponent implements Student{
+  name: string = ""
+  lastName: string = ""
+  mail: string = ""
+  password: string = ""
+  birthdate: Date = new Date
+  province: string = ""
+  carrerInterest: string = ""
 }

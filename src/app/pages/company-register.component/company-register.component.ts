@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { StepperModule } from 'primeng/stepper';
-import { Companies } from '../../entity/Companies';
+import { Companies } from '../../entity/companies';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 

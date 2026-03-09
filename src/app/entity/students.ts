@@ -1,10 +1,10 @@
-export class Student{
+export interface Student{
 
-    name: string = ""
-    lastName: string = ""
-    mail: string = ""
-    password: string = ""
-    birthdate: Date = new Date(0, 0, 0)
-    province: string = ""
-    carrerInterest: string = ""
+    name: string;
+    lastName: string;
+    mail: string;
+    password: string;
+    birthdate: Date;
+    province: string;
+    carrerInterest: string;
 }

@@ -92,25 +92,25 @@
     <!-- Vista GRID -->
     <ng-template #grid let-items>
       <div class="grid-wrapper">
-        @for (pasantia of items; track pasantia.id) {
+        @for (ads of items; track ads.id) {
           <div class="grid-item-wrapper">
             <div class="pasantia-card">
               <div class="card-image">
-                <img [src]="pasantia.imagen || 'assets/placeholder.png'" [alt]="pasantia.nombre" />
+                <img [src]="ads.image || 'assets/placeholder.png'" [alt]="ads.nombre" />
               </div>
               <div class="card-body">
                 <p class="card-label">Pasantía:</p>
-                <p class="card-title">{{ pasantia.nombre }}</p>
-                <p class="card-detail"><span>Empresa:</span> {{ pasantia.empresa }}</p>
-                <p class="card-detail"><span>Carrera:</span> {{ pasantia.carrera }}</p>
-                <p class="card-detail"><span>Modalidad:</span> {{ pasantia.modalidad }}</p>
-                <p class="card-detail"><span>Ubicación:</span> {{ pasantia.ubicacion }}</p>
-                <p class="card-detail"><span>Remuneración:</span> {{ pasantia.remuneracion }}</p>
+                <p class="card-title">{{ ads.nombre }}</p>
+                <p class="card-detail"><span>Empresa:</span> {{ ads.company }}</p>
+                <p class="card-detail"><span>Carrera:</span> {{ ads.carrer }}</p>
+                <p class="card-detail"><span>Modalidad:</span> {{ ads.mode }}</p>
+                <p class="card-detail"><span>Ubicación:</span> {{ ads.ubication }}</p>
+                <p class="card-detail"><span>Remuneración:</span> {{ ads.remuneration }}</p>
                 <p-button
                   icon="pi pi-eye"
                   label="Ver"
                   styleClass="btn-ver"
-                  (onClick)="verDetalle(pasantia)"
+                  (onClick)="verDetalle(ads)"
                 />
               </div>
             </div>
@@ -122,25 +122,25 @@
     <!-- Vista LIST -->
     <ng-template #list let-items>
       <div class="list-wrapper">
-        @for (pasantia of items; track pasantia.id) {
-          <div class="pasantia-list-card">
+        @for (ads of items; track ads.id) {
+          <div class="ads-list-card">
             <div class="list-image">
-              <img [src]="pasantia.imagen || 'assets/placeholder.png'" [alt]="pasantia.nombre" />
+              <img [src]="ads.image || 'assets/placeholder.png'" [alt]="ads.nameJob" />
             </div>
             <div class="list-body">
-              <p class="card-label">Pasantía: <strong>{{ pasantia.nombre }}</strong></p>
-              <p class="card-detail"><span>Empresa:</span> {{ pasantia.empresa }}</p>
-              <p class="card-detail"><span>Carrera:</span> {{ pasantia.carrera }}</p>
-              <p class="card-detail"><span>Modalidad:</span> {{ pasantia.modalidad }}</p>
-              <p class="card-detail"><span>Ubicación:</span> {{ pasantia.ubicacion }}</p>
-              <p class="card-detail"><span>Remuneración:</span> {{ pasantia.remuneracion }}</p>
+              <p class="card-label">Pasantía: <strong>{{ ads.nameJob }}</strong></p>
+              <p class="card-detail"><span>Empresa:</span> {{ ads.company }}</p>
+              <p class="card-detail"><span>Carrera:</span> {{ ads.carrer }}</p>
+              <p class="card-detail"><span>Modalidad:</span> {{ ads.mode }}</p>
+              <p class="card-detail"><span>Ubicación:</span> {{ ads.ubication }}</p>
+              <p class="card-detail"><span>Remuneración:</span> {{ ads.remuneration }}</p>
             </div>
             <div class="list-actions">
               <p-button
                 icon="pi pi-eye"
                 label="Ver"
                 styleClass="btn-ver"
-                (onClick)="verDetalle(pasantia)"
+                (onClick)="verDetalle(ads)"
               />
             </div>
           </div>
