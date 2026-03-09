@@ -1,0 +1,47 @@
+<p-drawer
+  [(visible)]="visible"
+  [closable]="true"
+  position="right"
+  [style]="{ width: '30rem' }"
+  (onHide)="cerrar()"
+>
+
+  <ng-template #header>
+    <div class="drawer-header">
+      <span class="drawer-header-title">{{ pasantia?.company }}</span>
+    </div>
+  </ng-template>
+
+  <div class="drawer-body" *ngIf="pasantia">
+    <h2 class="drawer-title">{{ pasantia.nameJob }}</h2>
+
+    <div class="drawer-detail">
+      <span class="detail-label">Empresa:</span>
+      <span>{{ pasantia.company }}</span>
+    </div>
+    <div class="drawer-detail">
+      <span class="detail-label">Carrera:</span>
+      <span>{{ pasantia.carrer }}</span>
+    </div>
+    <div class="drawer-detail">
+      <span class="detail-label">Modalidad:</span>
+      <span>{{ pasantia.mode }}</span>
+    </div>
+    <div class="drawer-detail">
+      <span class="detail-label">Ubicación:</span>
+      <span>{{ pasantia.ubication }}</span>
+    </div>
+    <div class="drawer-detail">
+      <span class="detail-label">Remuneración:</span>
+      <span>{{ pasantia.remuneration }}</span>
+    </div>
+  </div>
+
+  <ng-template #footer>
+    <div class="drawer-footer">
+      <button pButton label="Postularme" icon="pi pi-send" class="w-full" (click)="postular()"></button>
+      <button pButton label="Cerrar" icon="pi pi-times" class="w-full" severity="danger" text (click)="cerrar()"></button>
+    </div>
+  </ng-template>
+
+</p-drawer>
