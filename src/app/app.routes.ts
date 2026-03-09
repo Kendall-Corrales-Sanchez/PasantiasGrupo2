@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { Login } from './pages/login/login';
-import { Register } from './pages/register/register';
+import { Login } from './pages/login.component/login.component';
+import { Register } from './pages/register.component/register.component';
 import { ChooseRoleComponent } from './pages/choose-role.component/choose-role.component';
 import { CompanyRegisterComponent } from './pages/company-register.component/company-register.component';
 import { StudentRegisterComponent } from './pages/student-register.component/student-register.component';
-import { MenuLateral } from './pages/menu-lateral-student/menu-lateral-student';
-import { Layout } from './pages/layout/layout';
-import { Anuncios } from './pages/anuncios/ads-post';
+import { MenuLateral } from './pages/menu-lateral-student.component/menu-lateral-student.component';
+import { Layout } from './pages/layout.component/layout.component';
+import { Anuncios } from './pages/intership.component/intership.component';
 
 export const routes: Routes = [
     {

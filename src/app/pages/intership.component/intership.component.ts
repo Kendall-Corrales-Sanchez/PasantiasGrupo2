@@ -23,8 +23,8 @@ import { DrawerComponent } from '../drawer.component/drawer.component'
     SelectButton,
     DrawerComponent
 ],
-  templateUrl: './ads-post.html',
-  styleUrls:   ['./ads-post.css']
+  templateUrl: './intership.component.html',
+  styleUrls:   ['./intership.component.css']
 })
 export class Anuncios implements OnInit, Ads{
 
