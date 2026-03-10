@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
-import { Footer } from "./pages/footer/footer";
-import { MenuLateral } from "./pages/menu-lateral-student/menu-lateral-student";
+import { Footer } from "./pages/footer.component/footer.component";
+import { MenuLateral } from "./pages/menu-lateral-student.component/menu-lateral-student.component";
 
 @Component({
   selector: 'app-root',

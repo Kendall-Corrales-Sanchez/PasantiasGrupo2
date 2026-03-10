@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MenuLateral } from '../menu-lateral-student/menu-lateral-student';
+import { MenuLateral } from '../menu-lateral-student.component/menu-lateral-student.component';
 
 @Component({
   selector: 'app-layout',
   imports: [RouterOutlet, MenuLateral],
-  templateUrl: './layout.html',
-  styleUrl: './layout.css',
+  templateUrl: './layout.component.html',
+  styleUrl: './layout.component.css',
 })
 export class Layout {}

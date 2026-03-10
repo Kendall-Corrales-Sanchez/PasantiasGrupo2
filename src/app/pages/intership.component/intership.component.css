@@ -1,4 +1,4 @@
-/* pasantias.component.css */
+/* intership.component.css */
 
 /* ── Variables ─────────────────────────────────────────── */
 :root {
@@ -6,9 +6,10 @@
   --primary-light: #eff6ff;
   --primary-dark:  #1d4ed8;
   --accent:        #0ea5e9;
-  --text-main:     #000000;
-  --text-muted:    #000000;
+  --text-main:     #0f172a;
+  --text-muted:    #64748b;
   --border:        #e2e8f0;
+  --card-bg:       #ffffff;
   --radius:        10px;
   --shadow-card:   0 2px 12px rgba(37, 99, 235, 0.08);
   --shadow-hover:  0 6px 24px rgba(37, 99, 235, 0.15);
@@ -21,7 +22,7 @@
   padding: 24px 32px;
   background: #1a1a1a;
   min-height: 100vh;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 /* ── Barra de filtros ──────────────────────────────────── */
@@ -31,11 +32,10 @@
   gap: 10px;
   align-items: center;
   background: #222222;
-  border: 1px solid var(--border);
+  border: 1px solid #333333;
   border-radius: var(--radius);
   padding: 14px 18px;
   margin-bottom: 24px;
-
 }
 
 .filter-input {
@@ -92,7 +92,6 @@
   border-color: var(--primary) !important;
 }
 
-/* Opciones del select desplegadas */
 ::ng-deep .p-select-option {
   color: #000000 !important;
   font-family: var(--font-main);
@@ -119,29 +118,47 @@
   transform: translateY(-1px);
 }
 
-/* ── DataView header ───────────────────────────────────── */
+/* ── DataView overrides ────────────────────────────────── */
 .dataview-header {
   display: flex;
   justify-content: flex-end;
   padding: 4px 0 8px;
 }
 
-::ng-deep .pasantias-dataview .p-dataview-header {
-  background: transparent;
-  border: none;
-  padding: 0 0 8px;
+::ng-deep .p-dataview {
+  background: transparent !important;
 }
 
-::ng-deep .pasantias-dataview .p-paginator {
-  background: transparent;
-  border: none;
-  padding: 14px 0 0;
+::ng-deep .p-dataview .p-dataview-header {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 0 8px !important;
 }
 
-::ng-deep .pasantias-dataview .p-paginator .p-paginator-page.p-highlight {
-  background: var(--primary);
-  color: #fff;
-  border-radius: 6px;
+::ng-deep .p-dataview .p-dataview-content {
+  background: transparent !important;
+  border: none !important;
+}
+
+::ng-deep .p-dataview .p-paginator {
+  background: transparent !important;
+  border: none !important;
+  padding: 14px 0 0 !important;
+  color: #94a3b8 !important;
+}
+
+::ng-deep .p-dataview .p-paginator .p-paginator-page.p-highlight {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+}
+
+::ng-deep .p-dataview .p-paginator .p-paginator-page,
+::ng-deep .p-dataview .p-paginator .p-paginator-next,
+::ng-deep .p-dataview .p-paginator .p-paginator-prev,
+::ng-deep .p-dataview .p-paginator .p-paginator-first,
+::ng-deep .p-dataview .p-paginator .p-paginator-last {
+  color: #94a3b8 !important;
 }
 
 /* ── Grid ──────────────────────────────────────────────── */
@@ -156,7 +173,7 @@
 }
 
 .pasantia-card {
-  background: #eeeaea;
+  background: var(--card-bg) !important;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -197,7 +214,7 @@
 .card-label {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #000000;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0;
@@ -206,20 +223,20 @@
 .card-title {
   font-size: 0.95rem;
   font-weight: 800;
-  color: black;
+  color: white;
   margin: 0 0 6px;
 }
 
 .card-detail {
   font-size: 0.8rem;
-  color: #000000;
+  color: white;
   margin: 0;
   line-height: 1.45;
 }
 
 .card-detail span {
   font-weight: 700;
-  color: #000000;
+  color: white;
 }
 
 /* Botón Ver */
@@ -251,11 +268,11 @@
   padding: 10px 0;
 }
 
-.pasantia-list-card {
+.ads-list-card {
   display: flex;
   align-items: center;
   gap: 18px;
-  background: #ffffff;
+  background: var(--card-bg) !important;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 18px;
@@ -263,7 +280,7 @@
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.pasantia-list-card:hover {
+.ads-list-card:hover {
   box-shadow: var(--shadow-hover);
   transform: translateX(3px);
 }
@@ -292,12 +309,17 @@
 
 .list-body .card-label {
   width: 100%;
-  color: #000000;
+  color: white;
+}
+
+.list-body .card-label strong {
+  color: white;
+  font-weight: 800;
 }
 
 .list-body .card-detail {
   min-width: 160px;
-  color: #000000;
+  color: white;
 }
 
 .list-actions {
@@ -311,7 +333,7 @@
   align-items: center;
   justify-content: center;
   padding: 60px 20px;
-  color: #000000;
+  color: #94a3b8;
   gap: 12px;
 }
 
@@ -345,7 +367,7 @@
     width: 100% !important;
   }
 
-  .pasantia-list-card {
+  .ads-list-card {
     flex-wrap: wrap;
   }
 

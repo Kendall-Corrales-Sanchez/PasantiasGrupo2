@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 import { DataView }  from 'primeng/dataview';
 import { Select }    from 'primeng/select';
 import { InputText } from 'primeng/inputtext';
 import { Button }    from 'primeng/button';
-import { Paginator } from 'primeng/paginator';
 import { SelectButton } from 'primeng/selectbutton';
 import { Ads } from '../../entity/ads';
 import { DrawerComponent } from '../drawer.component/drawer.component'
@@ -23,8 +22,8 @@ import { DrawerComponent } from '../drawer.component/drawer.component'
     SelectButton,
     DrawerComponent
 ],
-  templateUrl: './ads-post.html',
-  styleUrls:   ['./ads-post.css']
+  templateUrl: './intership.component.html',
+  styleUrls:   ['./intership.component.css']
 })
 export class Anuncios implements OnInit, Ads{
 
