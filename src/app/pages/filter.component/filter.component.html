@@ -1,0 +1,85 @@
+<div class="filter-bar">
+  <!-- Nombre Puesto -->
+  <div class="filter-field">
+    <label class="filter-label" for="nombrePuesto">Nombre Puesto</label>
+    <input
+      pInputText
+      id="nombrePuesto"
+      [(ngModel)]="nombrePuesto"
+      placeholder=""
+      class="filter-input"
+    />
+  </div>
+
+  <!-- Empresa -->
+  <div class="filter-field">
+    <label class="filter-label" for="empresa">Empresa</label>
+    <input
+      pInputText
+      id="empresa"
+      [(ngModel)]="empresa"
+      placeholder=""
+      class="filter-input"
+    />
+  </div>
+
+  <!-- Carrera -->
+  <div class="filter-field">
+    <label class="filter-label" for="carrera">Carrera</label>
+    <input
+      pInputText
+      id="carrera"
+      [(ngModel)]="carrera"
+      placeholder=""
+      class="filter-input"
+    />
+  </div>
+
+
+  <!-- Remuneración -->
+  <div class="filter-field filter-field--select">
+    <label class="filter-label">Remuneración</label>
+    <p-select
+      [(ngModel)]="remuneracion"
+      [options]="remuneracionOptions"
+      optionLabel="label"
+      placeholder="Seleccione"
+      class="filter-select"
+      appendTo="body"
+    />
+  </div>
+
+  <!-- Modalidad -->
+  <div class="filter-field filter-field--select">
+    <label class="filter-label">Modalidad</label>
+    <p-select
+      [(ngModel)]="modalidad"
+      [options]="modalidadOptions"
+      optionLabel="label"
+      placeholder="Seleccione"
+      class="filter-select"
+      appendTo="body"
+    />
+  </div>
+
+  <!-- Ubicación -->
+  <div class="filter-field filter-field--select">
+    <label class="filter-label">Ubicación</label>
+    <p-select
+      [(ngModel)]="ubicacion"
+      [options]="ubicacionOptions"
+      optionLabel="label"
+      placeholder="Ubicación"
+      class="filter-select"
+      appendTo="body"
+    />
+  </div>
+
+  <!-- Botón Filtrar -->
+  <p-button
+    label="Filtrar"
+    icon="pi pi-search"
+    (onClick)="onFiltrar()"
+    class="filter-btn"
+  />
+</div>

@@ -5,6 +5,7 @@ import { DataView }  from 'primeng/dataview';
 import { Ads } from '../../entity/ads';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
+import { FilterComponent } from "../filter.component/filter.component";
 
 @Component({
   selector:   'app-pasantias',
@@ -15,11 +16,12 @@ import { ButtonModule } from 'primeng/button';
     DataView,
     TagModule,
     ButtonModule,
+    FilterComponent
 ],
   templateUrl: './intership.component.html',
   styleUrls:   ['./intership.component.css']
 })
-export class Anuncios implements OnInit{
+export class Intership implements OnInit{
 
   id: number = 0
   nameJob: string = ""
