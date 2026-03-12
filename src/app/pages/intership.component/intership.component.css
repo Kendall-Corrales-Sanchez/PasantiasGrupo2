@@ -1,383 +1,238 @@
-/* intership.component.css */
-
-/* ── Variables ─────────────────────────────────────────── */
-:root {
-  --primary:       #2563eb;
-  --primary-light: #eff6ff;
-  --primary-dark:  #1d4ed8;
-  --accent:        #0ea5e9;
-  --text-main:     #0f172a;
-  --text-muted:    #64748b;
-  --border:        #e2e8f0;
-  --card-bg:       #ffffff;
-  --radius:        10px;
-  --shadow-card:   0 2px 12px rgba(37, 99, 235, 0.08);
-  --shadow-hover:  0 6px 24px rgba(37, 99, 235, 0.15);
-  --font-main:     'Nunito', 'Segoe UI', sans-serif;
-}
-
-/* ── Contenedor principal ──────────────────────────────── */
-.pasantias-container {
-  font-family: var(--font-main);
-  padding: 24px 32px;
+/* ===========================
+   CARD WRAPPER
+=========================== */
+.card {
   background: #1a1a1a;
-  min-height: 100vh;
-  color: var(--text-main);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border: 1px solid #252540;
+  box-sizing: border-box;
 }
 
-/* ── Barra de filtros ──────────────────────────────────── */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  background: #222222;
-  border: 1px solid #333333;
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  margin-bottom: 24px;
-}
-
-.filter-input {
-  flex: 1 1 130px;
-  min-width: 110px;
-  height: 36px;
-  border: 1px solid var(--border) !important;
-  border-radius: 6px !important;
-  padding: 0 10px !important;
-  font-size: 0.82rem !important;
-  font-family: var(--font-main) !important;
-  color: #000000 !important;
-  background: #f8fafc !important;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.filter-input:focus {
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.13) !important;
-  background: #fff !important;
-  outline: none;
-}
-
-.filter-input--sm {
-  flex: 0 1 120px;
-}
-
-/* PrimeNG Select override */
-::ng-deep .filter-select.p-select {
-  flex: 0 1 140px;
-  min-width: 130px;
-  height: 36px;
-  border: 1px solid var(--border) !important;
-  border-radius: 6px !important;
-  background: #f8fafc !important;
-  font-size: 0.82rem;
-  font-family: var(--font-main);
-}
-
-::ng-deep .filter-select .p-select-label {
-  font-size: 0.82rem;
-  font-family: var(--font-main);
-  color: #000000 !important;
-  padding: 0 10px;
-  line-height: 34px;
-}
-
-::ng-deep .filter-select.p-select:not(.p-disabled):hover {
-  border-color: var(--primary) !important;
-}
-
-::ng-deep .filter-select.p-select.p-focus {
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.13) !important;
-  border-color: var(--primary) !important;
-}
-
-::ng-deep .p-select-option {
-  color: #000000 !important;
-  font-family: var(--font-main);
-  font-size: 0.82rem;
-}
-
-/* Botón filtrar */
-.btn-filtrar {
-  background: var(--primary) !important;
-  border: none !important;
-  border-radius: 6px !important;
-  padding: 0 18px !important;
-  height: 36px !important;
-  font-size: 0.82rem !important;
-  font-family: var(--font-main) !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-
-.btn-filtrar:hover {
-  background: var(--primary-dark) !important;
-  transform: translateY(-1px);
-}
-
-/* ── DataView overrides ────────────────────────────────── */
-.dataview-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 4px 0 8px;
-}
-
-::ng-deep .p-dataview {
-  background: transparent !important;
-}
-
-::ng-deep .p-dataview .p-dataview-header {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 0 8px !important;
-}
-
-::ng-deep .p-dataview .p-dataview-content {
+.card .p-dataview,
+.card .p-dataview-content {
   background: transparent !important;
   border: none !important;
 }
 
-::ng-deep .p-dataview .p-paginator {
-  background: transparent !important;
-  border: none !important;
-  padding: 14px 0 0 !important;
-  color: #94a3b8 !important;
+/* ===========================
+   FILA DE ITEM
+=========================== */
+.card .flex.flex-row.items-center.p-4.gap-4 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  padding: 14px 16px !important;
+  gap: 14px !important;
+  background: #1a1a1a;
+  transition: background;
 }
 
-::ng-deep .p-dataview .p-paginator .p-paginator-page.p-highlight {
-  background: var(--primary) !important;
+.card .flex.flex-row.items-center.p-4.gap-4:hover {
+  background: #000000;
+}
+
+/* ===========================
+   IMAGEN
+=========================== */
+.card .relative.flex-shrink-0 img {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+  border: 1px solid #2a2a45 !important;
+}
+
+/* ===========================
+   BADGES
+=========================== */
+.card .p-tag {
+  border-radius: 5px !important;
+  font-size: 0.58rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.07em !important;
+  padding: 2px 6px !important;
+  text-transform: uppercase !important;
+}
+
+.card .p-tag[value="INSTOCK"] {
+  background: #16a34a !important;
   color: #fff !important;
-  border-radius: 6px !important;
 }
 
-::ng-deep .p-dataview .p-paginator .p-paginator-page,
-::ng-deep .p-dataview .p-paginator .p-paginator-next,
-::ng-deep .p-dataview .p-paginator .p-paginator-prev,
-::ng-deep .p-dataview .p-paginator .p-paginator-first,
-::ng-deep .p-dataview .p-paginator .p-paginator-last {
-  color: #94a3b8 !important;
+.card .p-tag[value="OUTOFSTOCK"] {
+  background: #dc2626 !important;
+  color: #fff !important;
 }
 
-/* ── Grid ──────────────────────────────────────────────── */
-.grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+.card .p-tag[value="LOWSTOCK"] {
+  background: #d97706 !important;
+  color: #fff !important;
 }
 
-.grid-item-wrapper {
-  padding: 10px;
+/* ===========================
+   INFO CENTRAL
+=========================== */
+.card .flex.flex-col.gap-1.flex-1 {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  min-width: 0 !important;
 }
 
-.pasantia-card {
-  background: var(--card-bg) !important;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow 0.25s, transform 0.25s;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+/* Empresa */
+.card .flex.flex-col.gap-1.flex-1 > span:nth-child(1) {
+  font-size: 0.7rem !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  font-weight: 500 !important;
 }
 
-.pasantia-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+/* Nombre del puesto */
+.card .flex.flex-col.gap-1.flex-1 > span:nth-child(2) {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #e5e7eb !important;
 }
 
-.card-image {
-  width: 100%;
-  height: 140px;
-  overflow: hidden;
-  background: var(--primary-light);
+/* Carrera */
+.card .flex.flex-col.gap-1.flex-1 > span:nth-child(3) {
+  font-size: 0.75rem !important;
+  color: #ffffff !important;
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* Ubicación */
+.card .flex.flex-col.gap-1.flex-1 > div {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  color: #ffffff !important;
+  font-size: 0.75rem !important;
+  margin-top: 2px !important;
 }
 
-.card-body {
-  padding: 14px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
+/* ===========================
+   PRECIO Y BOTONES
+=========================== */
+.card .flex.flex-col.items-end.gap-3.flex-shrink-0 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
 }
 
-.card-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0;
+/* Precio */
+.card .flex.flex-col.items-end.gap-3.flex-shrink-0 > span {
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #f3f4f6 !important;
+  white-space: nowrap !important;
 }
 
-.card-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: white;
-  margin: 0 0 6px;
-}
-
-.card-detail {
-  font-size: 0.8rem;
-  color: white;
-  margin: 0;
-  line-height: 1.45;
-}
-
-.card-detail span {
-  font-weight: 700;
-  color: white;
-}
-
-/* Botón Ver */
-.btn-ver {
-  margin-top: auto;
-  padding-top: 12px;
+/* ===========================
+   BOTÓN CORAZÓN
+=========================== */
+.card .p-button.p-button-outlined {
+  border: 1px solid #374151 !important;
+  color: #9ca3af !important;
   background: transparent !important;
-  color: var(--primary) !important;
-  border: 1.5px solid var(--primary) !important;
+  border-radius: 8px !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  transition: all 0.2s ease;
+}
+
+.card .p-button.p-button-outlined:hover {
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
+  background: rgba(239,68,68,0.08) !important;
+}
+
+/* ===========================
+   BOTÓN BUY NOW / POSTULARME
+=========================== */
+.card .p-button:not(.p-button-outlined) {
+  background: #0d9488 !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  height: 34px !important;
+  padding: 0 14px !important;
+  transition: all 0.2s ease;
+  white-space: nowrap !important;
+}
+
+.card .p-button:not(.p-button-outlined):hover {
+  background: #0f766e !important;
+}
+
+.card .p-button:not(.p-button-outlined)[disabled],
+.card .p-button:not(.p-button-outlined).p-disabled {
+  background: #1f2937 !important;
+  border-color: #2d3748 !important;
+  color: #4b5563 !important;
+  cursor: not-allowed !important;
+  opacity: 1 !important;
+}
+
+/* ===========================
+   SEPARADOR
+=========================== */
+.card div[style*="height: 1px"] {
+  background: linear-gradient(to right, transparent, #2d3748, transparent) !important;
+  margin: 0 !important;
+  height: 1px !important;
+}
+
+/* ===========================
+   PAGINADOR
+=========================== */
+.card .p-paginator {
+  background: #141424 !important;
+  border-top: 1px solid #252540 !important;
+  padding: 10px 16px !important;
+  border-radius: 0 0 12px 12px !important;
+  justify-content: center !important;
+}
+
+.card .p-paginator .p-paginator-page {
+  color: #6b7280 !important;
   border-radius: 6px !important;
   font-size: 0.8rem !important;
-  font-weight: 700 !important;
-  height: 32px !important;
-  width: fit-content;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  min-width: 30px !important;
+  height: 30px !important;
 }
 
-.btn-ver:hover {
-  background: var(--primary) !important;
+.card .p-paginator .p-paginator-page:hover {
+  background: #252540 !important;
+  color: #e5e7eb !important;
+}
+
+.card .p-paginator .p-paginator-page.p-highlight {
+  background: #3b82f6 !important;
   color: #fff !important;
+  font-weight: 700 !important;
 }
 
-/* ── Lista ─────────────────────────────────────────────── */
-.list-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 0;
+.card .p-paginator .p-paginator-prev,
+.card .p-paginator .p-paginator-next,
+.card .p-paginator .p-paginator-first,
+.card .p-paginator .p-paginator-last {
+  color: #4b5563 !important;
+  border-radius: 6px !important;
 }
 
-.ads-list-card {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  background: var(--card-bg) !important;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.ads-list-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateX(3px);
-}
-
-.list-image {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--primary-light);
-}
-
-.list-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.list-body {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 24px;
-}
-
-.list-body .card-label {
-  width: 100%;
-  color: white;
-}
-
-.list-body .card-label strong {
-  color: white;
-  font-weight: 800;
-}
-
-.list-body .card-detail {
-  min-width: 160px;
-  color: white;
-}
-
-.list-actions {
-  flex-shrink: 0;
-}
-
-/* ── Estado vacío ──────────────────────────────────────── */
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  color: #94a3b8;
-  gap: 12px;
-}
-
-.empty-state i {
-  font-size: 3rem;
-  opacity: 0.4;
-}
-
-.empty-state p {
-  font-size: 1rem;
-  margin: 0;
-}
-
-/* ── Responsive ────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .pasantias-container {
-    padding: 16px;
-  }
-
-  .filter-bar {
-    padding: 12px;
-  }
-
-  .filter-input,
-  ::ng-deep .filter-select.p-select {
-    flex: 1 1 100%;
-    min-width: unset;
-  }
-
-  .btn-filtrar {
-    width: 100% !important;
-  }
-
-  .ads-list-card {
-    flex-wrap: wrap;
-  }
-
-  .grid-wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  .grid-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.card .p-paginator .p-paginator-prev:hover,
+.card .p-paginator .p-paginator-next:hover {
+  background: #252540 !important;
+  color: #9ca3af !important;
 }

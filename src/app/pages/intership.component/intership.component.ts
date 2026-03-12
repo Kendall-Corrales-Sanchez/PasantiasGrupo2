@@ -1,13 +1,10 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 import { DataView }  from 'primeng/dataview';
-import { Select }    from 'primeng/select';
-import { InputText } from 'primeng/inputtext';
-import { Button }    from 'primeng/button';
-import { SelectButton } from 'primeng/selectbutton';
 import { Ads } from '../../entity/ads';
-import { DrawerComponent } from '../drawer.component/drawer.component'
+import { TagModule } from 'primeng/tag';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector:   'app-pasantias',
@@ -16,16 +13,13 @@ import { DrawerComponent } from '../drawer.component/drawer.component'
     CommonModule,
     FormsModule,
     DataView,
-    Select,
-    InputText,
-    Button,
-    SelectButton,
-    DrawerComponent
+    TagModule,
+    ButtonModule,
 ],
   templateUrl: './intership.component.html',
   styleUrls:   ['./intership.component.css']
 })
-export class Anuncios implements OnInit, Ads{
+export class Anuncios implements OnInit{
 
   id: number = 0
   nameJob: string = ""
@@ -36,75 +30,61 @@ export class Anuncios implements OnInit, Ads{
   remuneration: string = ""
   image?: string = ""
 
-  modalidadOptions = [
-    { label: 'Todas',      value: null         },
-    { label: 'Virtual',    value: 'Virtual'    },
-    { label: 'Presencial', value: 'Presencial' },
-    { label: 'Híbrida',    value: 'Híbrida'    }
-  ];
+  ads = signal<Ads[]>([]);
 
-  ubicacionOptions = [
-    { label: 'Todas',      value: null         },
-    { label: 'San José',   value: 'San José'   },
-    { label: 'Alajuela',   value: 'Alajuela'   },
-    { label: 'Cartago',    value: 'Cartago'    },
-    { label: 'Heredia',    value: 'Heredia'    },
-    { label: 'Guanacaste', value: 'Guanacaste' }
-  ];
-
-  // ── Estado de filtros ─────────────────────────────────────────────────────
-  filters = {
-    nombre:       '',
-    empresa:      '',
-    carrera:      '',
-    remuneracion: '',
-    modalidad:    null as string | null,
-    ubicacion:    null as string | null
-  };
-
-  rows = 12;
-
-  // ── Toggle de layout ──────────────────────────────────────────────────────
-  layout: 'grid' | 'list' = 'grid';
-
-  layoutOptions = [
-    { icon: 'pi pi-table',  value: 'grid' },
-    { icon: 'pi pi-list',   value: 'list' }
-  ];
-
-  // ── Datos de ejemplo ──────────────────────────────────────────────────────
-  ads: Ads[] = [
-    {
-      id: 1,
-      nameJob:       'Ingeniería Software',
-      company:      'Tech Innovaciones S.A.',
-      carrer:      'Software',
-      mode:    'Virtual',
-      ubication:    'San José',
-      remuneration: 'Sí',
-      image: 'https://i.pinimg.com/736x/62/82/35/628235e796d964af0ce2d83cff9c25b5.jpg'
-    },
-  ];
-
-  pasantiasFiltradas: Ads[] = [];
-
-  // ── Ciclo de vida ─────────────────────────────────────────────────────────
-  ngOnInit(): void {
-    this.pasantiasFiltradas = [...this.ads];
-  }
-
-  // ── Métodos (vacíos, listos para implementar) ─────────────────────────────
-
-  /** Se dispara al cambiar cualquier campo del filtro en tiempo real */
-  onFilterChange(): void {}
-
-  /** Aplica todos los filtros activos y actualiza pasantiasFiltradas */
-  aplicarFiltros(): void {}
-
-  @ViewChild(DrawerComponent)
-  drawerRef!: DrawerComponent;
-
-  verDetalle(ads: Ads): void {
-    this.drawerRef.abrir(ads);   // ← abre el drawer y le pasa la pasantía
+  ngOnInit() {
+    
+    this.ads.set([
+      {
+        id: 1,
+        nameJob: 'Desarrollador Frontend',
+        company: 'TechCorp',
+        carrer: 'Ingeniería de Sistemas',
+        mode: 'Remoto',
+        ubication: 'Bogotá, Colombia',
+        remuneration: '$1,500,000',
+        image: 'https://placehold.co/100x100'
+      },
+      {
+        id: 2,
+        nameJob: 'Analista de Datos',
+        company: 'DataSoft',
+        carrer: 'Estadística',
+        mode: 'Presencial',
+        ubication: 'Medellín, Colombia',
+        remuneration: '$1,200,000',
+        image: 'https://placehold.co/100x100'
+      },
+      {
+        id: 3,
+        nameJob: 'Diseñador UX/UI',
+        company: 'CreativeHub',
+        carrer: 'Diseño Gráfico',
+        mode: 'Híbrido',
+        ubication: 'Cali, Colombia',
+        remuneration: '$1,800,000',
+        image: 'https://placehold.co/100x100'
+      },
+      {
+        id: 4,
+        nameJob: 'Backend Developer',
+        company: 'CloudSystems',
+        carrer: 'Ingeniería de Software',
+        mode: 'Remoto',
+        ubication: 'Barranquilla, Colombia',
+        remuneration: '$2,000,000',
+        image: 'https://placehold.co/100x100'
+      },
+      {
+        id: 5,
+        nameJob: 'QA Tester',
+        company: 'QualityApps',
+        carrer: 'Ingeniería de Sistemas',
+        mode: 'Presencial',
+        ubication: 'Bucaramanga, Colombia',
+        remuneration: '$1,100,000',
+        image: 'https://placehold.co/100x100'
+      }
+    ]);
   }
 }

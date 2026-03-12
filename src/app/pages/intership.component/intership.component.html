@@ -1,163 +1,54 @@
-<!-- pasantias.component.html -->
-<div class="pasantias-container">
-
-  <!-- ===== FILTROS ===== -->
-  <div class="filter-bar">
-    <input
-      pInputText
-      class="filter-input"
-      placeholder="Nombre Puesto"
-      [(ngModel)]="filters.nombre"
-      (input)="onFilterChange()"
-    />
-
-    <input
-      pInputText
-      class="filter-input"
-      placeholder="Empresa"
-      [(ngModel)]="filters.empresa"
-      (input)="onFilterChange()"
-    />
-
-    <input
-      pInputText
-      class="filter-input"
-      placeholder="Carrera"
-      [(ngModel)]="filters.carrera"
-      (input)="onFilterChange()"
-    />
-
-    <input
-      pInputText
-      class="filter-input filter-input--sm"
-      placeholder="Remuneración"
-      [(ngModel)]="filters.remuneracion"
-      (input)="onFilterChange()"
-    />
-
-    <!-- PrimeNG v19+: p-select en lugar de p-dropdown -->
-    <p-select
-      [options]="modalidadOptions"
-      [(ngModel)]="filters.modalidad"
-      optionLabel="label"
-      optionValue="value"
-      placeholder="Modalidad"
-      styleClass="filter-select"
-      (onChange)="onFilterChange()"
-    />
-
-    <p-select
-      [options]="ubicacionOptions"
-      [(ngModel)]="filters.ubicacion"
-      optionLabel="label"
-      optionValue="value"
-      placeholder="Ubicación"
-      styleClass="filter-select"
-      (onChange)="onFilterChange()"
-    />
-
-    <p-button
-      label="Filtrar"
-      icon="pi pi-search"
-      styleClass="btn-filtrar"
-      (onClick)="aplicarFiltros()"
-    />
-  </div>
-
-
-  <app-drawer />
-
-  <!-- ===== DATA VIEW ===== -->
-  <p-dataview
-    [value]="pasantiasFiltradas"
-    [paginator]="true"
-    [rows]="rows"
-    [rowsPerPageOptions]="[6, 12, 24]"
-    [layout]="layout"
-  >
-
-    <!-- Header: toggle de layout manual -->
-    <ng-template #header>
-      <div class="dataview-header">
-        <p-selectbutton
-          [options]="layoutOptions"
-          [(ngModel)]="layout"
-          optionValue="value"
-        >
-          <ng-template #item let-opt>
-            <i [class]="opt.icon"></i>
-          </ng-template>
-        </p-selectbutton>
-      </div>
-    </ng-template>
-
-    <!-- Vista GRID -->
-    <ng-template #grid let-items>
-      <div class="grid-wrapper">
-        @for (ads of items; track ads.id) {
-          <div class="grid-item-wrapper">
-            <div class="pasantia-card">
-              <div class="card-image">
-                <img [src]="ads.image || 'assets/placeholder.png'" [alt]="ads.nombre" />
-              </div>
-              <div class="card-body">
-                <p class="card-label">Pasantía:</p>
-                <p class="card-title">{{ ads.nombre }}</p>
-                <p class="card-detail"><span>Empresa:</span> {{ ads.company }}</p>
-                <p class="card-detail"><span>Carrera:</span> {{ ads.carrer }}</p>
-                <p class="card-detail"><span>Modalidad:</span> {{ ads.mode }}</p>
-                <p class="card-detail"><span>Ubicación:</span> {{ ads.ubication }}</p>
-                <p class="card-detail"><span>Remuneración:</span> {{ ads.remuneration }}</p>
-                <p-button
-                  icon="pi pi-eye"
-                  label="Ver"
-                  styleClass="btn-ver"
-                  (onClick)="verDetalle(ads)"
-                />
-              </div>
-            </div>
-          </div>
-        }
-      </div>
-    </ng-template>
-
-    <!-- Vista LIST -->
+<div class="card">
+  <p-dataview #dv [value]="ads()" [rows]="5" [paginator]="true">
     <ng-template #list let-items>
-      <div class="list-wrapper">
-        @for (ads of items; track ads.id) {
-          <div class="ads-list-card">
-            <div class="list-image">
-              <img [src]="ads.image || 'assets/placeholder.png'" [alt]="ads.nameJob" />
+      <div class="flex flex-col">
+        <ng-container *ngFor="let item of items; let first = first; let last = last">
+
+          <div class="flex flex-row items-center p-4 gap-4">
+
+            <!-- Imagen -->
+            <div class="relative flex-shrink-0">
+              <img [src]="item.image" [alt]="item.nameJob"
+                style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px;" />
+              <p-tag [value]="item.mode"
+                style="position: absolute; top: 4px; left: 4px; font-size: 0.65rem;" />
             </div>
-            <div class="list-body">
-              <p class="card-label">Pasantía: <strong>{{ ads.nameJob }}</strong></p>
-              <p class="card-detail"><span>Empresa:</span> {{ ads.company }}</p>
-              <p class="card-detail"><span>Carrera:</span> {{ ads.carrer }}</p>
-              <p class="card-detail"><span>Modalidad:</span> {{ ads.mode }}</p>
-              <p class="card-detail"><span>Ubicación:</span> {{ ads.ubication }}</p>
-              <p class="card-detail"><span>Remuneración:</span> {{ ads.remuneration }}</p>
+
+            <!-- Info central -->
+            <div class="flex flex-col gap-1 flex-1">
+              <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">
+                {{ item.company }}
+              </span>
+              <span style="font-size: 1rem; font-weight: 700; color: #f1f5f9;">
+                {{ item.nameJob }}
+              </span>
+              <span style="font-size: 0.8rem; color: #64748b;">
+                {{ item.carrer }}
+              </span>
+              <div style="display: inline-flex; align-items: center; gap: 4px; color: #3b82f6; font-size: 0.8rem; margin-top: 4px;">
+                <i class="pi pi-map-marker"></i>
+                {{ item.ubication }}
+              </div>
             </div>
-            <div class="list-actions">
-              <p-button
-                icon="pi pi-eye"
-                label="Ver"
-                styleClass="btn-ver"
-                (onClick)="verDetalle(ads)"
-              />
+
+            <!-- Precio y botones -->
+            <div class="flex flex-col items-end gap-3 flex-shrink-0">
+              <span style="font-size: 1.1rem; font-weight: 700; color: #ffffff;">
+              </span>
+              <div class="flex gap-2">
+                <p-button icon="pi pi-eye" label="Ver Más" />
+              </div>
             </div>
+
           </div>
-        }
+
+          <!-- Separador -->
+          <div *ngIf="!last"
+            style="height: 1px; background: linear-gradient(to right, transparent, #334155, transparent); margin: 0 1rem;">
+          </div>
+
+        </ng-container>
       </div>
     </ng-template>
-
-    <!-- Sin resultados -->
-    <ng-template #empty>
-      <div class="empty-state">
-        <i class="pi pi-inbox"></i>
-        <p>No se encontraron pasantías.</p>
-      </div>
-    </ng-template>
-
   </p-dataview>
-
 </div>
