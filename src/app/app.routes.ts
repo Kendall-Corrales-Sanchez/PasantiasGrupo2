@@ -6,7 +6,8 @@ import { CompanyRegisterComponent } from './pages/company-register.component/com
 import { StudentRegisterComponent } from './pages/student-register.component/student-register.component';
 import { MenuLateral } from './pages/menu-lateral-student.component/menu-lateral-student.component';
 import { Layout } from './pages/layout.component/layout.component';
-import { Anuncios } from './pages/intership.component/intership.component';
+import { Intership } from './pages/intership.component/intership.component';
+import { FilterComponent } from './pages/filter.component/filter.component';
 
 export const routes: Routes = [
     {
@@ -42,8 +43,8 @@ export const routes: Routes = [
     path: 'menus',
     component: Layout,
     children: [
-      { path: 'principal', loadComponent: () => Anuncios },
-      { path: 'perfil',    loadComponent: () => Register },
+      { path: 'principal', loadComponent: () => Intership },
+      { path: 'perfil',    loadComponent: () => FilterComponent },
       { path: 'mensajeria', loadComponent: () => CompanyRegisterComponent },
       { path: 'notificaciones', loadComponent: () => ChooseRoleComponent },
       { path: '', redirectTo: 'principal', pathMatch: 'full' },

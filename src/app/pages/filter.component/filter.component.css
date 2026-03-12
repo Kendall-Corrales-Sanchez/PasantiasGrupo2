@@ -1,0 +1,151 @@
+/* =========================================
+   Job Filter Bar – PrimeNG 21 + CSS puro
+   Diseño: cards en grid, label arriba
+   ========================================= */
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+/* ── Separador: oculto siempre ── */
+.filter-divider {
+  display: none;
+}
+
+/* ── Cada campo es una card ── */
+.filter-field,
+.filter-field--select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: #1e1e1e;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* ── Label ── */
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Input de texto ── */
+.filter-input.p-inputtext {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 2px 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: transparent;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+}
+
+.filter-input.p-inputtext:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Select (p-select) ── */
+.filter-select {
+  width: 100%;
+}
+
+.filter-bar .p-select {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.filter-bar .p-select:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.filter-bar .p-select .p-select-label {
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: 2px 0;
+}
+
+.filter-bar .p-select .p-select-dropdown {
+  width: 1.8rem;
+  color: #6b7280;
+}
+
+/* ── Botón Filtrar: ocupa la fila entera ── */
+.filter-btn {
+  grid-column: 1 / -1;
+  margin: 0;
+  flex-shrink: 0;
+  width: fit-content;
+}
+
+.filter-bar .p-button {
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.filter-bar .p-button:hover {
+  background: #059669;
+}
+
+.filter-bar .p-button .p-button-icon {
+  font-size: 0.9rem;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media (max-width: 700px) {
+  .filter-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-btn {
+    grid-column: 1 / -1;
+  }
+
+  .filter-bar .p-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+}
