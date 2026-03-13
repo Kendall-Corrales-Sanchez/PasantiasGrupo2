@@ -1,0 +1,42 @@
+.perfil-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: #1a1a1a;
+}
+
+.perfil-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.field input,
+.field p-dropdown {
+  width: 100%;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 4px;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-actions p-button:first-child {
+  flex: 1;
+}

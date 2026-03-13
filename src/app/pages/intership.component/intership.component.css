@@ -3,7 +3,7 @@
 =========================== */
 .card {
   background: #1a1a1a;
-  border-radius: 12px;
+  border-radius: 0px;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
