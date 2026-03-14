@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { Ads } from '../../entity/ads';
+import { Component, EventEmitter, Input, model, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DrawerModule } from 'primeng/drawer';
 import { ButtonModule } from 'primeng/button';
+import { Ads } from '../../entity/ads';
 @Component({
   selector: 'app-drawer',
   imports: [CommonModule, DrawerModule, ButtonModule],
@@ -11,26 +11,16 @@ import { ButtonModule } from 'primeng/button';
   standalone: true
 })
 export class DrawerComponent {
-
   @Input() pasantia: Ads | null = null;
+  @Output() onCerrar = new EventEmitter<void>();
+  visible = model(false);
 
-  // visible se maneja internamente — el padre llama a abrir() por @ViewChild
-  visible: boolean = false;
-
-  abrir(ads: Ads): void {
-    this.pasantia = ads;
-    this.visible  = true;
+  cerrar() {
+    this.visible.set(false);
+    this.onCerrar.emit();
   }
 
-  cerrar(): void {
-    this.visible = false;
+  postular() {
+    console.log('Postulando a:', this.pasantia);
   }
-
-  postular(): void {
-    if (!this.pasantia) return;
-    console.log('Postulando a:', this.pasantia.nameJob);
-    // TODO: llamar a tu servicio de postulación
-  }
-
-
 }

@@ -9,6 +9,7 @@ import { Layout } from './pages/layout.component/layout.component';
 import { Intership } from './pages/intership.component/intership.component';
 import { PerfilComponent } from './pages/perfil.component/perfil.component';
 import { ChatComponent } from './pages/chat.component/chat.component'
+import { PostIntershipComponent } from './pages/post-intership.component/post-intership.component';
 export const routes: Routes = [
     {
         path: '',
@@ -43,7 +44,7 @@ export const routes: Routes = [
     path: 'menus',
     component: Layout,
     children: [
-      { path: 'principal', loadComponent: () => Intership },
+      { path: 'principal', loadComponent: () => PostIntershipComponent },
       { path: 'perfil',    loadComponent: () => PerfilComponent },
       { path: 'mensajeria', loadComponent: () => ChatComponent },
       { path: 'notificaciones', loadComponent: () => ChooseRoleComponent },

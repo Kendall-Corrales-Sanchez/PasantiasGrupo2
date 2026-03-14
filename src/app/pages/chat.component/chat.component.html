@@ -3,18 +3,12 @@
   <!-- ── Panel izquierdo: lista de contactos ── -->
   <div class="chat-sidebar">
     <div class="chat-sidebar-list">
-<<<<<<< HEAD
-      <div class="chat-sidebar-item" *ngFor="let student of students; trackBy: trackByStudentId"
-        [class.chat-sidebar-item--active]="student.id === selectedStudent?.id" (click)="onSelectStudent(student)">
-        <span class="chat-sidebar-item-name">{{ student.name }}</span>
-=======
       <div
         class="chat-sidebar-item"
         *ngFor="let student of students; trackBy: trackByStudentId"
         [class.chat-sidebar-item--active]="student.id === selectedStudent?.id"
         (click)="onSelectStudent(student)">
         <span class="chat-sidebar-item-name">{{ student.name }}{{ student.role }}</span>
->>>>>>> d5d11c259d29db62eae4a16bf5db023321016988
       </div>
     </div>
   </div>
