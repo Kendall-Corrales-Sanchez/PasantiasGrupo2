@@ -9,7 +9,6 @@ import { Layout } from './pages/layout.component/layout.component';
 import { Intership } from './pages/intership.component/intership.component';
 import { PerfilComponent } from './pages/perfil.component/perfil.component';
 import { ChatComponent } from './pages/chat.component/chat.component'
-
 export const routes: Routes = [
     {
         path: '',

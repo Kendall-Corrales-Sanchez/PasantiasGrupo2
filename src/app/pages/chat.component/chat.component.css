@@ -1,8 +1,3 @@
-/* ─────────────────────────────────────────────────────────────
-   chat.component.css
-   Diseño estructural con flexbox — sin colores definidos.
-   ───────────────────────────────────────────────────────────── */
-
 /* ── Contenedor principal ── */
 .chat-container {
   display: flex;
@@ -11,8 +6,8 @@
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  border: 1px solid;
   border-radius: 8px;
+  background-color: #1a1a1a;
 }
 
 /* ─────────────────────────────────────────
@@ -40,6 +35,8 @@
   cursor: pointer;
   border-bottom: 1px solid;
   transition: opacity 0.15s ease;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .chat-sidebar-item:last-child {

@@ -3,16 +3,24 @@
   <!-- ── Panel izquierdo: lista de contactos ── -->
   <div class="chat-sidebar">
     <div class="chat-sidebar-list">
+<<<<<<< HEAD
       <div class="chat-sidebar-item" *ngFor="let student of students; trackBy: trackByStudentId"
         [class.chat-sidebar-item--active]="student.id === selectedStudent?.id" (click)="onSelectStudent(student)">
         <span class="chat-sidebar-item-name">{{ student.name }}</span>
+=======
+      <div
+        class="chat-sidebar-item"
+        *ngFor="let student of students; trackBy: trackByStudentId"
+        [class.chat-sidebar-item--active]="student.id === selectedStudent?.id"
+        (click)="onSelectStudent(student)">
+        <span class="chat-sidebar-item-name">{{ student.name }}{{ student.role }}</span>
+>>>>>>> d5d11c259d29db62eae4a16bf5db023321016988
       </div>
     </div>
   </div>
 
   <!-- ── Panel derecho: área del chat ── -->
   <div class="chat-panel">
-
     <!-- Sin selección -->
     <div class="chat-empty-state" *ngIf="!selectedStudent">
       <i class="pi pi-comments"></i>
@@ -21,7 +29,6 @@
 
     <!-- Con selección -->
     <ng-container *ngIf="selectedStudent">
-
       <!-- Header -->
       <div class="chat-panel-header">
         <span class="chat-panel-header-name">{{ selectedStudent?.name }}</span>
@@ -53,11 +60,21 @@
 
       <!-- Input area -->
       <div class="chat-input-area">
-        <textarea pTextarea [(ngModel)]="newMessage" placeholder="Escribir" [rows]="1" [autoResize]="false"
-          class="chat-input-textarea" (keydown)="onKeyDown($event)">
+        <textarea
+          pTextarea
+          [(ngModel)]="newMessage"
+          placeholder="Escribir"
+          [rows]="1"
+          [autoResize]="false"
+          class="chat-input-textarea"
+          (keydown)="onKeyDown($event)">
         </textarea>
 
-        <p-button label="Enviar" class="chat-input-send" [disabled]="!newMessage.trim()" (onClick)="onSendMessage()">
+        <p-button
+          label="Enviar"
+          class="chat-input-send"
+          [disabled]="!newMessage.trim()"
+          (onClick)="onSendMessage()">
         </p-button>
       </div>
 

@@ -34,7 +34,6 @@ export interface Student {
 export class ChatComponent implements OnInit, OnDestroy, AfterViewChecked {
 
   @ViewChild('messagesContainer') messagesContainer!: ElementRef<HTMLDivElement>;
-
   // ID del usuario actual
   currentUserId: string = 'user-current';
 
