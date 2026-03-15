@@ -10,6 +10,7 @@ import { TrackerComponent } from './pages/students/tracker.component/tracker.com
 import { ChooseRoleComponent } from './pages/global/choose-role.component/choose-role.component';
 import { CompanyRegisterComponent } from './pages/companies/company-register.component/company-register.component';
 import { LayoutCompanyComponent } from './pages/companies/layout-company.component/layout-company.component';
+import { CrudIntershipComponent } from './pages/companies/crud-intership.component/crud-intership.component';
 export const routes: Routes = [
     {
         path: '',
@@ -51,7 +52,7 @@ export const routes: Routes = [
     path: 'menuCompany',
     component: LayoutCompanyComponent,
     children: [
-      { path: 'principal', loadComponent: () => PostIntershipComponent },
+      { path: 'principal', loadComponent: () => CrudIntershipComponent },
       { path: 'perfil',    loadComponent: () => PerfilComponent },
       { path: 'mensajeria', loadComponent: () => ChatComponent },
       { path: 'notificaciones', loadComponent: () => TrackerComponent },
