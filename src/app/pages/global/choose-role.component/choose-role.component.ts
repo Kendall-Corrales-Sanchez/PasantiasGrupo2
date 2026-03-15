@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { NavigationService } from '../../genericFuntion';
+import { NavigationService } from '../../../genericFuntion';
 import "primeicons/primeicons.css";
 
 @Component({

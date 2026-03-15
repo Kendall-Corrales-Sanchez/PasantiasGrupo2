@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationService } from '../../genericFuntion';
+import { NavigationService } from '../../../genericFuntion';
 
 @Component({
   selector: 'app-login',

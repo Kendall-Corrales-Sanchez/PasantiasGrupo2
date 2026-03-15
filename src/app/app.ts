@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Footer } from "./pages/footer.component/footer.component";
+import { Footer } from "./pages/global/footer.component/footer.component";
 
 @Component({
   selector: 'app-root',

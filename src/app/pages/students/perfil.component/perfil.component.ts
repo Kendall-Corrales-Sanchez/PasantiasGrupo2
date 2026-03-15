@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { Student } from '../../entity/students';
+import { Student } from '../../../entity/student';
 import { SelectModule } from 'primeng/select';
 import { CardModule } from 'primeng/card';
 

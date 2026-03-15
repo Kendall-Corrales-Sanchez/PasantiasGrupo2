@@ -1,24 +1,18 @@
 import { Routes } from '@angular/router';
-import { Login } from './pages/login.component/login.component';
-import { Register } from './pages/register.component/register.component';
-import { ChooseRoleComponent } from './pages/choose-role.component/choose-role.component';
-import { CompanyRegisterComponent } from './pages/company-register.component/company-register.component';
-import { StudentRegisterComponent } from './pages/student-register.component/student-register.component';
-import { MenuLateral } from './pages/menu-lateral-student.component/menu-lateral-student.component';
-import { Layout } from './pages/layout.component/layout.component';
-import { Intership } from './pages/intership.component/intership.component';
-import { PerfilComponent } from './pages/perfil.component/perfil.component';
-import { ChatComponent } from './pages/chat.component/chat.component'
-import { PostIntershipComponent } from './pages/post-intership.component/post-intership.component';
+import { Login } from './pages/global/login.component/login.component';
+import { StudentRegisterComponent } from './pages/students/student-register.component/student-register.component';
+import { MenuLateral } from './pages/students/menu-lateral-student.component/menu-lateral-student.component';
+import { Layout } from './pages/global/layout.component/layout.component';
+import { PerfilComponent } from './pages/students/perfil.component/perfil.component';
+import { ChatComponent } from './pages/global/chat.component/chat.component'
+import { PostIntershipComponent } from './pages/students/post-intership.component/post-intership.component';
 import { TrackerComponent } from './tracker.component/tracker.component';
+import { ChooseRoleComponent } from './pages/global/choose-role.component/choose-role.component';
+import { CompanyRegisterComponent } from './pages/companies/company-register.component/company-register.component';
 export const routes: Routes = [
     {
         path: '',
         component: Login,
-    },
-    {
-        path: 'registro',
-        component: Register,
     },
     {
         path: 'login',
