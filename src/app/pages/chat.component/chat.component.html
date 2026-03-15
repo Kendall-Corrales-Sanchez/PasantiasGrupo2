@@ -1,0 +1,85 @@
+<div class="chat-container">
+
+  <!-- ── Panel izquierdo: lista de contactos ── -->
+  <div class="chat-sidebar">
+    <div class="chat-sidebar-list">
+<<<<<<< HEAD
+      <div class="chat-sidebar-item" *ngFor="let student of students; trackBy: trackByStudentId"
+        [class.chat-sidebar-item--active]="student.id === selectedStudent?.id" (click)="onSelectStudent(student)">
+        <span class="chat-sidebar-item-name">{{ student.name }}</span>
+=======
+      <div
+        class="chat-sidebar-item"
+        *ngFor="let student of students; trackBy: trackByStudentId"
+        [class.chat-sidebar-item--active]="student.id === selectedStudent?.id"
+        (click)="onSelectStudent(student)">
+        <span class="chat-sidebar-item-name">{{ student.name }}{{ student.role }}</span>
+>>>>>>> d5d11c259d29db62eae4a16bf5db023321016988
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Panel derecho: área del chat ── -->
+  <div class="chat-panel">
+    <!-- Sin selección -->
+    <div class="chat-empty-state" *ngIf="!selectedStudent">
+      <i class="pi pi-comments"></i>
+      <span>Selecciona algún chat</span>
+    </div>
+
+    <!-- Con selección -->
+    <ng-container *ngIf="selectedStudent">
+      <!-- Header -->
+      <div class="chat-panel-header">
+        <span class="chat-panel-header-name">{{ selectedStudent?.name }}</span>
+        <span class="chat-panel-header-separator" *ngIf="selectedStudent"> - </span>
+        <span class="chat-panel-header-role">{{ selectedStudent?.role }}</span>
+      </div>
+
+
+      <!-- Área de mensajes -->
+      <div class="chat-messages" #messagesContainer>
+        <ng-container *ngFor="let message of messages; trackBy: trackByMessageId">
+
+          <!-- Mensaje del contacto (izquierda) -->
+          <div class="chat-message-row chat-message-row--left" *ngIf="message.senderId !== currentUserId">
+            <div class="chat-message-bubble chat-message-bubble--left">
+              <span class="chat-message-text">{{ message.text }}</span>
+            </div>
+          </div>
+
+          <!-- Mensaje propio (derecha) -->
+          <div class="chat-message-row chat-message-row--right" *ngIf="message.senderId === currentUserId">
+            <div class="chat-message-bubble chat-message-bubble--right">
+              <span class="chat-message-text">{{ message.text }}</span>
+            </div>
+          </div>
+
+        </ng-container>
+      </div>
+
+      <!-- Input area -->
+      <div class="chat-input-area">
+        <textarea
+          pTextarea
+          [(ngModel)]="newMessage"
+          placeholder="Escribir"
+          [rows]="1"
+          [autoResize]="false"
+          class="chat-input-textarea"
+          (keydown)="onKeyDown($event)">
+        </textarea>
+
+        <p-button
+          label="Enviar"
+          class="chat-input-send"
+          [disabled]="!newMessage.trim()"
+          (onClick)="onSendMessage()">
+        </p-button>
+      </div>
+
+    </ng-container>
+
+  </div>
+
+</div>

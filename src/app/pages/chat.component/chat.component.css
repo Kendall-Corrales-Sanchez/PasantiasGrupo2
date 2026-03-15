@@ -1,0 +1,189 @@
+/* ── Contenedor principal ── */
+.chat-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+}
+
+/* ─────────────────────────────────────────
+   SIDEBAR — Lista de estudiantes
+───────────────────────────────────────── */
+.chat-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 200px;
+  border-right: 1px solid;
+  overflow-y: auto;
+}
+
+.chat-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.chat-sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  border-bottom: 1px solid;
+  transition: opacity 0.15s ease;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.chat-sidebar-item:last-child {
+  border-bottom: none;
+}
+
+.chat-sidebar-item--active {
+  font-weight: 600;
+}
+
+.chat-sidebar-item-name {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─────────────────────────────────────────
+   PANEL DERECHO — Chat
+───────────────────────────────────────── */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.chat-panel-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid;
+}
+
+.chat-panel-header-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.chat-panel-header-separator {
+  font-size: 0.95rem;
+}
+
+.chat-panel-header-role {
+  font-size: 0.95rem;
+}
+
+/* ── Área de mensajes ── */
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 1rem;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* ── Filas de mensajes ── */
+.chat-message-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.chat-message-row--left {
+  justify-content: flex-start;
+}
+
+.chat-message-row--right {
+  justify-content: flex-end;
+}
+
+/* ── Burbujas ── */
+.chat-message-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid;
+  border-radius: 12px;
+  word-break: break-word;
+}
+
+.chat-message-bubble--left {
+  border-bottom-left-radius: 4px;
+}
+
+.chat-message-bubble--right {
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ── Estado vacío (sin chat seleccionado) ── */
+.chat-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.chat-empty-state i {
+  font-size: 2.5rem;
+  opacity: 0.3;
+}
+
+.chat-empty-state span {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* ── Input area ── */
+.chat-input-area {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  padding: 0.875rem 1rem;
+  border-top: 1px solid;
+}
+
+.chat-input-textarea {
+  flex: 1;
+  resize: none;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.chat-input-send {
+  flex-shrink: 0;
+}
