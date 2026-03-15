@@ -12,7 +12,7 @@ export class MenuLateralCompanyComponent {
 
   cerrarSesion(): void {
     // Aquí coloca tu lógica de cierre de sesión
-    // Por ejemplo: this.authService.logout();
+    // Por ejemplo: this.authService.logout()
     this.router.navigate(['/login']);
   }
 }
