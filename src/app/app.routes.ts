@@ -8,6 +8,7 @@ import { MenuLateral } from './pages/menu-lateral-student.component/menu-lateral
 import { Layout } from './pages/layout.component/layout.component';
 import { Intership } from './pages/intership.component/intership.component';
 import { FilterComponent } from './pages/filter.component/filter.component';
+import { PerfilComponent } from './pages/perfil.component/perfil.component';
 
 export const routes: Routes = [
     {
@@ -44,7 +45,7 @@ export const routes: Routes = [
     component: Layout,
     children: [
       { path: 'principal', loadComponent: () => Intership },
-      { path: 'perfil',    loadComponent: () => FilterComponent },
+      { path: 'perfil',    loadComponent: () => PerfilComponent },
       { path: 'mensajeria', loadComponent: () => CompanyRegisterComponent },
       { path: 'notificaciones', loadComponent: () => ChooseRoleComponent },
       { path: '', redirectTo: 'principal', pathMatch: 'full' },

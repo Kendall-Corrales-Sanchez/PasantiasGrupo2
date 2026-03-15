@@ -1,0 +1,58 @@
+<div class="perfil-container">
+  <p-card header="Mi Perfil" styleClass="perfil-card">
+
+    <div class="field">
+      <label for="nombres">Nombres:</label>
+      <input id="nombres" type="text" pInputText [(ngModel)]="name" />
+    </div>
+
+    <div class="field">
+      <label for="apellidos">Apellidos:</label>
+      <input id="apellidos" type="text" pInputText [(ngModel)]="lastName" />
+    </div>
+
+    <div class="field">
+      <label for="descripcion">Descripción</label>
+      <input id="descripcion" type="text" pInputText [(ngModel)]="descripcion" />
+    </div>
+
+    <div class="field">
+      <label for="correo">Correo:</label>
+      <input id="correo" type="email" pInputText [(ngModel)]="mail" />
+    </div>
+
+    <div class="field">
+      <label for="carrera">Carrera:</label>
+      <input id="carrera" type="text" pInputText [(ngModel)]="carrerInterest" />
+    </div>
+
+    <div class="field">
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input id="fechaNacimiento" type="text" pInputText [(ngModel)]="birthdate" />
+    </div>
+
+    <p-select
+        id="provincia"
+        [(ngModel)]="province"
+        [options]="provincias"
+        optionLabel="label"
+        placeholder="Seleccionar"
+    />
+
+    <div class="field">
+      <label>CV:</label>
+      <div class="cv-actions">
+        <p-button icon="pi pi-plus" label="CV" (onClick)="subirCV()" />
+        <p-button icon="pi pi-download" label="Guardar CV" severity="success" (onClick)="guardarCV()" />
+      </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <div class="footer-actions">
+        <p-button label="Actualizar Perfil" (onClick)="actualizarPerfil()" />
+        <p-button label="Volver" severity="danger" (onClick)="volver()" />
+      </div>
+    </ng-template>
+
+  </p-card>
+</div>
