@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-menu-lateral-company',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './menu-lateral-company.component.html',
   styleUrl: './menu-lateral-company.component.css',
 })
