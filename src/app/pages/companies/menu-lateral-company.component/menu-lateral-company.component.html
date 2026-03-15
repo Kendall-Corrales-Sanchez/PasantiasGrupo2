@@ -1,0 +1,47 @@
+<aside class="sidebar">
+
+  <div class="sidebar-header">
+    <a class="sidebar-brand" routerLink="/menuCompany/principal" routerLinkActive="active">
+      <div class="brand-icon">
+        <i class="pi pi-home"></i>
+      </div>
+      <span class="brand-label">Principal</span>
+    </a>
+  </div>
+
+  <nav class="sidebar-nav">
+    <span class="nav-section-label">Menú</span>
+
+    <a class="sidebar-item" routerLink="/menuCompany/perfil" routerLinkActive="active">
+      <div class="item-icon">
+        <i class="pi pi-user"></i>
+      </div>
+      <span>Ver mi perfil</span>
+    </a>
+
+    <a class="sidebar-item" routerLink="/menuCompany/mensajeria" routerLinkActive="active">
+      <div class="item-icon">
+        <i class="pi pi-comments"></i>
+        <span class="badge">3</span>
+      </div>
+      <span>Mensajería</span>
+    </a>
+
+    <a class="sidebar-item" routerLink="/menuComapany/postulantes" routerLinkActive="active">
+      <div class="item-icon">
+        <i class="pi pi-bell"></i>
+      </div>
+      <span>Postulantes</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-item logout" (click)="cerrarSesion()">
+      <div class="item-icon">
+        <i class="pi pi-sign-out"></i>
+      </div>
+      <span>Cerrar Sesión</span>
+    </div>
+  </div>
+
+</aside>
