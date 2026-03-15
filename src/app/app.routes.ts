@@ -10,6 +10,7 @@ import { Intership } from './pages/intership.component/intership.component';
 import { PerfilComponent } from './pages/perfil.component/perfil.component';
 import { ChatComponent } from './pages/chat.component/chat.component'
 import { PostIntershipComponent } from './pages/post-intership.component/post-intership.component';
+import { TrackerComponent } from './tracker.component/tracker.component';
 export const routes: Routes = [
     {
         path: '',
@@ -47,7 +48,7 @@ export const routes: Routes = [
       { path: 'principal', loadComponent: () => PostIntershipComponent },
       { path: 'perfil',    loadComponent: () => PerfilComponent },
       { path: 'mensajeria', loadComponent: () => ChatComponent },
-      { path: 'notificaciones', loadComponent: () => ChooseRoleComponent },
+      { path: 'notificaciones', loadComponent: () => TrackerComponent },
       { path: '', redirectTo: 'principal', pathMatch: 'full' },
     ],
   },

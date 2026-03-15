@@ -1,0 +1,62 @@
+<div class="tracker-container">
+
+  <!-- Top section: Pie charts -->
+  <div class="charts-section">
+
+    <!-- Aplicado -->
+    <div class="chart-card">
+      <h3 class="chart-title">Aplicado</h3>
+      <p-chart
+        type="pie"
+        [data]="aplicadoData"
+        [options]="chartOptions"
+        [width]="'200px'"
+        [height]="'200px'"
+        styleClass="chart-widget">
+      </p-chart>
+    </div>
+
+    <!-- Revisado -->
+    <div class="chart-card">
+      <h3 class="chart-title">Revisado</h3>
+      <p-chart
+        type="pie"
+        [data]="revisadoData"
+        [options]="chartOptions"
+        [width]="'200px'"
+        [height]="'200px'"
+        styleClass="chart-widget">
+      </p-chart>
+    </div>
+
+  </div>
+
+  <!-- Bottom section: Notifications + Custom Scrollbar -->
+  <div class="bottom-section">
+
+    <!-- Notification list -->
+    <div class="notifications-panel" #notifPanel (scroll)="onPanelScroll($event)">
+      <div
+        class="notification-item"
+        *ngFor="let notif of notifications"
+        (click)="onNotificationClick(notif)">
+        <span class="notif-text">{{ notif.message }}</span>
+      </div>
+    </div>
+
+    <!-- Custom scrollbar -->
+    <div class="custom-scrollbar">
+      <button class="scroll-arrow scroll-arrow--up" (click)="scrollUp()">&#9650;</button>
+      <div class="scroll-track">
+        <div
+          class="scroll-thumb"
+          [style.top.%]="thumbPosition"
+          [style.height.%]="thumbHeight">
+        </div>
+      </div>
+      <button class="scroll-arrow scroll-arrow--down" (click)="scrollDown()">&#9660;</button>
+    </div>
+
+  </div>
+
+</div>
