@@ -2,10 +2,10 @@ import { Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 import { DataView }  from 'primeng/dataview';
-import { Ads } from '../../entity/ads';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { FilterComponent } from "../filter.component/filter.component";
+import { Intership } from "../../../entity/intership"
 
 @Component({
   selector:   'app-pasantias',
@@ -21,7 +21,7 @@ import { FilterComponent } from "../filter.component/filter.component";
   templateUrl: './intership.component.html',
   styleUrls:   ['./intership.component.css']
 })
-export class Intership implements OnInit{
+export class IntershipComponent implements OnInit{
 
   id: number = 0
   nameJob: string = ""
@@ -32,17 +32,17 @@ export class Intership implements OnInit{
   remuneration: string = ""
   image?: string = ""
 
-  @Output() verMasClick = new EventEmitter<Ads>();
+  @Output() verMasClick = new EventEmitter<Intership>();
 
-  verMas(item: Ads) {
+  verMas(item: Intership) {
     this.verMasClick.emit(item);
   }
 
-  ads = signal<Ads[]>([]);
+  interships = signal<Intership[]>([]);
 
   ngOnInit() {
     
-    this.ads.set([
+    this.interships.set([
       {
         id: 1,
         nameJob: 'Desarrollador Frontend',

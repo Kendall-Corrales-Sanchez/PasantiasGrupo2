@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MenuLateral } from '../menu-lateral-student.component/menu-lateral-student.component';
+import { MenuLateral } from '../../students/menu-lateral-student.component/menu-lateral-student.component';
 
 @Component({
   selector: 'app-layout',

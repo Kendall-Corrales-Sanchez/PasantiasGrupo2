@@ -1,4 +1,4 @@
-export interface Ads {
+export interface Intership {
   id: number;
   nameJob: string;
   company: string;

@@ -4,7 +4,7 @@
   <div style="height: 1px; background: linear-gradient(to right, transparent, #334155, transparent); margin: 0 1rem;">
   </div>
 
-  <p-dataview #dv [value]="ads()" [rows]="5" [paginator]="true">
+  <p-dataview #dv [value]="interships()" [rows]="5" [paginator]="true">
     <ng-template #list let-items>
       <div class="flex flex-col">
         <ng-container *ngFor="let item of items; let first = first; let last = last">
