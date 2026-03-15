@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-menu-lateral',
+  selector: 'app-manu-lateral-company',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './menu-lateral-student.component.html',
-  styleUrl: './menu-lateral-student.component.css',
+  templateUrl: './manu-lateral-company.component.html',
+  styleUrl: './manu-lateral-company.component.css',
 })
-export class MenuLateral {
+export class ManuLateralCompanyComponent {
   constructor(private router: Router) {}
 
   cerrarSesion(): void {

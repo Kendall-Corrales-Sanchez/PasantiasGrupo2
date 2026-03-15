@@ -6,9 +6,10 @@ import { Layout } from './pages/global/layout.component/layout.component';
 import { PerfilComponent } from './pages/students/perfil.component/perfil.component';
 import { ChatComponent } from './pages/global/chat.component/chat.component'
 import { PostIntershipComponent } from './pages/students/post-intership.component/post-intership.component';
-import { TrackerComponent } from './tracker.component/tracker.component';
+import { TrackerComponent } from './pages/students/tracker.component/tracker.component';
 import { ChooseRoleComponent } from './pages/global/choose-role.component/choose-role.component';
 import { CompanyRegisterComponent } from './pages/companies/company-register.component/company-register.component';
+import { LayoutCompanyComponent } from './pages/companies/layout-company.component/layout-company.component';
 export const routes: Routes = [
     {
         path: '',
@@ -38,6 +39,17 @@ export const routes: Routes = [
     {
     path: 'menus',
     component: Layout,
+    children: [
+      { path: 'principal', loadComponent: () => PostIntershipComponent },
+      { path: 'perfil',    loadComponent: () => PerfilComponent },
+      { path: 'mensajeria', loadComponent: () => ChatComponent },
+      { path: 'notificaciones', loadComponent: () => TrackerComponent },
+      { path: '', redirectTo: 'principal', pathMatch: 'full' },
+    ],
+  },
+  {
+    path: 'menuCompany',
+    component: LayoutCompanyComponent,
     children: [
       { path: 'principal', loadComponent: () => PostIntershipComponent },
       { path: 'perfil',    loadComponent: () => PerfilComponent },
