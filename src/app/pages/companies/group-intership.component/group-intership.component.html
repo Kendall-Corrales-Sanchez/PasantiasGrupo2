@@ -1,0 +1,18 @@
+<div class="puestos-container">
+  <div class="puestos-grid">
+    <div
+      class="puesto-card"
+      *ngFor="let puesto of puestos; let i = index"
+    >
+      <div class="puesto-header">
+        <span class="puesto-titulo">{{ puesto.nombre }}</span>
+      </div>
+      <div class="puesto-body">
+        <p-button
+          label="Aplicantes"
+          (onClick)="onVerAplicantes(puesto)"
+        ></p-button>
+      </div>
+    </div>
+  </div>
+</div>
