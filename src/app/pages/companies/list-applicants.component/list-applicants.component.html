@@ -1,0 +1,53 @@
+<div class="container">
+  <p-table [value]="postulantes" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="caption">
+      <div class="table-caption">
+        <h2>Lista de Postulantes</h2>
+      </div>
+    </ng-template>
+ 
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Descripción</th>
+        <th>CV</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+ 
+    <ng-template pTemplate="body" let-postulante>
+      <tr>
+        <td>{{ postulante.nombre }}</td>
+        <td>{{ postulante.apellido }}</td>
+        <td>{{ postulante.correo }}</td>
+        <td>{{ postulante.descripcion }}</td>
+        <td class="cv-cell">
+          <a
+            *ngIf="postulante.cvUrl"
+            (click)="abrirCV(postulante)"
+            class="cv-link"
+            title="Ver CV en PDF"
+          >
+            <i class="pi pi-file-pdf cv-icon"></i>
+          </a>
+          <span *ngIf="!postulante.cvUrl" class="no-cv">—</span>
+        </td>
+        <td class="actions-cell">
+          <p-button
+            label="Iniciar Chat"
+            icon="pi pi-comments"
+            (onClick)="iniciarChat(postulante)"
+          />
+          <p-button
+            label="Regresar"
+            icon="pi pi-arrow-left"
+            severity="secondary"
+            (onClick)="regresar()"
+          />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
