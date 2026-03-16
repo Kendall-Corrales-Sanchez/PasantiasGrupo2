@@ -1,0 +1,67 @@
+<div class="perfil-container">
+  <p-card header="Perfil de Empresa" styleClass="perfil-card">
+
+    <div class="field">
+      <label for="nameCompany">Nombre de la Empresa:</label>
+      <input id="nameCompany" type="text" pInputText [(ngModel)]="company.nameCompany"
+        placeholder="Ej. TechCorp S.A." />
+    </div>
+
+    <div class="field">
+      <label for="mail">Correo:</label>
+      <input id="mail" type="email" pInputText [(ngModel)]="company.mail"
+        placeholder="Ej. contacto@empresa.com" />
+    </div>
+
+    <div class="field">
+      <label for="password">Contraseña:</label>
+      <p-password
+        id="password"
+        [(ngModel)]="company.password"
+        [feedback]="false"
+        [toggleMask]="true"
+        styleClass="w-full"
+      />
+    </div>
+
+    <div class="field">
+      <label for="province">Provincia:</label>
+      <p-select
+        id="province"
+        [(ngModel)]="company.province"
+        [options]="provincias"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Seleccionar provincia"
+        styleClass="w-full"
+      />
+    </div>
+
+    <div class="field">
+      <label for="whoAreWe">¿Quiénes Somos?</label>
+      <input id="whoAreWe" type="text" pInputText [(ngModel)]="company.WhoAreWe"
+        placeholder="Descripción breve de la empresa" />
+    </div>
+
+    <div class="field">
+      <label for="sectorType">Sector:</label>
+      <p-select
+        id="sectorType"
+        [(ngModel)]="company.sectorType"
+        [options]="sectorOptions"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Seleccionar sector"
+        styleClass="w-full"
+      />
+    </div>
+
+    <ng-template pTemplate="footer">
+      <div class="footer-actions">
+        <p-button label="Actualizar Perfil" icon="pi pi-check" (click)="actualizarPerfil()" />
+        <p-button label="Volver" icon="pi pi-arrow-left" severity="danger" (click)="volver()" />
+      </div>
+    </ng-template>
+
+  </p-card>
+</div>

@@ -21,14 +21,9 @@
 }
 
 .field input,
-.field p-dropdown {
+.field p-select,
+.field p-password {
   width: 100%;
-}
-
-.cv-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 4px;
 }
 
 .footer-actions {

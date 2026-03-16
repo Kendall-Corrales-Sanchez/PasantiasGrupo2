@@ -11,6 +11,7 @@ import { ChooseRoleComponent } from './pages/global/choose-role.component/choose
 import { CompanyRegisterComponent } from './pages/companies/company-register.component/company-register.component';
 import { LayoutCompanyComponent } from './pages/companies/layout-company.component/layout-company.component';
 import { CrudIntershipComponent } from './pages/companies/crud-intership.component/crud-intership.component';
+import { PerfilCompanyComponent } from './pages/companies/perfil-company/perfil-company';
 export const routes: Routes = [
     {
         path: '',
@@ -53,7 +54,7 @@ export const routes: Routes = [
     component: LayoutCompanyComponent,
     children: [
       { path: 'principal', loadComponent: () => CrudIntershipComponent },
-      { path: 'perfil',    loadComponent: () => PerfilComponent },
+      { path: 'perfil',    loadComponent: () => PerfilCompanyComponent },
       { path: 'mensajeria', loadComponent: () => ChatComponent },
       { path: 'notificaciones', loadComponent: () => TrackerComponent },
       { path: '', redirectTo: 'principal', pathMatch: 'full' },
