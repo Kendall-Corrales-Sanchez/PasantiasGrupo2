@@ -8,7 +8,6 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './menu-lateral-student.component.css',
 })
 export class MenuLateral {
-
   constructor(private router: Router) {}
 
   cerrarSesion(): void {
