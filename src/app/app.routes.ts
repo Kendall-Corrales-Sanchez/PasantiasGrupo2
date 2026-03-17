@@ -12,6 +12,7 @@ import { CompanyRegisterComponent } from './pages/companies/company-register.com
 import { LayoutCompanyComponent } from './pages/companies/layout-company.component/layout-company.component';
 import { CrudIntershipComponent } from './pages/companies/crud-intership.component/crud-intership.component';
 import { PerfilCompanyComponent } from './pages/companies/perfil-company/perfil-company';
+import { GroupIntershipComponent } from './pages/companies/group-intership.component/group-intership.component';
 export const routes: Routes = [
     {
         path: '',
@@ -56,7 +57,7 @@ export const routes: Routes = [
       { path: 'principal', loadComponent: () => CrudIntershipComponent },
       { path: 'perfil',    loadComponent: () => PerfilCompanyComponent },
       { path: 'mensajeria', loadComponent: () => ChatComponent },
-      { path: 'notificaciones', loadComponent: () => TrackerComponent },
+      { path: 'notificaciones', loadComponent: () => GroupIntershipComponent },
       { path: '', redirectTo: 'principal', pathMatch: 'full' },
     ],
   },
