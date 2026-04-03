@@ -13,6 +13,7 @@ import { LayoutCompanyComponent } from './pages/companies/layout-company.compone
 import { CrudIntershipComponent } from './pages/companies/crud-intership.component/crud-intership.component';
 import { PerfilCompanyComponent } from './pages/companies/perfil-company/perfil-company';
 import { GroupIntershipComponent } from './pages/companies/group-intership.component/group-intership.component';
+import { ListApplicantsComponent } from './pages/companies/list-applicants.component/list-applicants.component';
 export const routes: Routes = [
     {
         path: '',

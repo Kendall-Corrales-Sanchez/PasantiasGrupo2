@@ -15,43 +15,43 @@
                             <div class="form-grid">
                                 <div class="field">
                                     <label>Nombres</label>
-                                    <input type="text" pInputText [(ngModel)]="name" />
+                                    <input type="text" pInputText [(ngModel)]="name" name="name"/>
                                 </div>
 
                                 <div class="field">
                                     <label>Apellidos</label>
-                                    <input type="text" pInputText [(ngModel)]="lastName" />
+                                    <input type="text" pInputText [(ngModel)]="lastName" name="lastName">
                                 </div>
 
                                 <div class="field">
                                     <label>Correo</label>
-                                    <input type="email" pInputText [(ngModel)]="mail" />
+                                    <input type="email" pInputText [(ngModel)]="mail" name="email"/>
                                 </div>
 
                                 <div class="field">
                                     <label>Contraseña</label>
-                                    <input type="password" pInputText [(ngModel)]="password" />
+                                    <input type="password" pInputText [(ngModel)]="password" name="password"/>
                                 </div>
 
                                 <div class="field">
                                     <label>Fecha de Nacimiento</label>
-                                    <input type="text" pInputText [(ngModel)]="birthdate" />
+                                    <input type="text" pInputText [(ngModel)]="birthdate" name="birthdate"/>
                                 </div>
 
                                 <div class="field">
                                     <label>Provincia</label>
-                                    <input type="text" pInputText [(ngModel)]="province" />
+                                    <input type="text" pInputText [(ngModel)]="province" name="province"/>
                                 </div>
 
                                 <div class="field">
                                     <label>Carrera de Interés</label>
-                                    <input type="text" pInputText [(ngModel)]="carrerInterest" />
+                                    <input type="text" pInputText [(ngModel)]="carrerInterest" name="carrerInterest"/>
                                 </div>
                             </div>
 
                             <div class="boton">
                                 <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
-                                    (onClick)="activateCallback(2)"/>
+                                    (onClick)="activateCallback(2)" (onClick)="addUser()"/>
                             </div>
 
                         </div>
