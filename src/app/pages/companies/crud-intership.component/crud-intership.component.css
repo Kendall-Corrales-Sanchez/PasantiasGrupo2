@@ -6,7 +6,8 @@
   flex-direction: column;
   gap: 1.25rem;
   padding: 1.5rem;
-  border-radius: 0.75rem;
+  background: #131313;
+  
 }
 
 /* ─────────────────────────────────────────────

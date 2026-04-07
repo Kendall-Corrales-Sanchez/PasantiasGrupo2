@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 
@@ -19,6 +19,7 @@ export interface Postulante {
   imports: [CommonModule, TableModule, ButtonModule],
   templateUrl: './list-applicants.component.html',
   styleUrl: './list-applicants.component.css',
+  encapsulation: ViewEncapsulation.None 
 })
 export class ListApplicantsComponent {
   postulantes: Postulante[] = [
