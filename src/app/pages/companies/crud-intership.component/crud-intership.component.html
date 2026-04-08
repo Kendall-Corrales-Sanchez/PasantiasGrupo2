@@ -48,7 +48,6 @@
           <div class="th-content">
             Puesto
             <p-sortIcon field="nameJob" />
-            <p-columnFilter type="text" field="nameJob" display="menu" class="ml-auto" />
           </div>
         </th>
 
@@ -56,7 +55,6 @@
           <div class="th-content">
             Empresa
             <p-sortIcon field="company" />
-            <p-columnFilter type="text" field="company" display="menu" class="ml-auto" />
           </div>
         </th>
 
@@ -64,7 +62,6 @@
           <div class="th-content">
             Carrera
             <p-sortIcon field="carrer" />
-            <p-columnFilter type="text" field="carrer" display="menu" class="ml-auto" />
           </div>
         </th>
 
@@ -72,7 +69,6 @@
           <div class="th-content">
             Modalidad
             <p-sortIcon field="mode" />
-            <p-columnFilter type="text" field="mode" display="menu" class="ml-auto" />
           </div>
         </th>
 
@@ -80,7 +76,6 @@
           <div class="th-content">
             Ubicación
             <p-sortIcon field="ubication" />
-            <p-columnFilter type="text" field="ubication" display="menu" class="ml-auto" />
           </div>
         </th>
 
@@ -88,7 +83,6 @@
           <div class="th-content">
             Remuneración
             <p-sortIcon field="remuneration" />
-            <p-columnFilter type="text" field="remuneration" display="menu" class="ml-auto" />
           </div>
         </th>
 
@@ -106,15 +100,7 @@
         </td>
 
         <td>
-          <div class="cell-with-image">
-            <img
-              *ngIf="internship.image"
-              [src]="internship.image"
-              [alt]="internship.nameJob"
-              class="row-avatar"
-            />
             <span>{{ internship.nameJob }}</span>
-          </div>
         </td>
 
         <td>{{ internship.company }}</td>
