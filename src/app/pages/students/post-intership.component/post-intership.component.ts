@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { DrawerComponent } from "../drawer.component/drawer.component";
-import { Intership } from '../../../entity/intership';
 import { CommonModule } from '@angular/common';
 import { IntershipComponent } from '../intership.component/intership.component';
+import { IntershipDetail } from '../../../entity/internshipDetails';
 
 @Component({
   selector: 'app-post-intership.component',
@@ -12,10 +12,10 @@ import { IntershipComponent } from '../intership.component/intership.component';
 })
 export class PostIntershipComponent {
 
-  pasantiaSeleccionada: Intership | null = null;
+  pasantiaSeleccionada: IntershipDetail | null = null;
   drawerVisible = false;
 
-  abrirDrawer(item: Intership) {
+  abrirDrawer(item: IntershipDetail) {
     this.pasantiaSeleccionada = item;
     this.drawerVisible = true;
   }

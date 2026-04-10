@@ -19,8 +19,16 @@ import { Companies } from '../../../entity/company';
   templateUrl: './perfil-company.html',
   styleUrl: './perfil-company.css',
 })
-export class PerfilCompanyComponent implements OnInit{
-  company: Companies = new Companies();
+export class PerfilCompanyComponent implements OnInit {
+  company: Companies = {
+    id: 0,
+    nameCompany: '',
+    mail: '',
+    password: '',
+    province: '',
+    WhoAreWe: '',
+    sectorType: ''
+  };
 
   provincias: { label: string; value: string }[] = [
     { label: 'San José', value: 'san_jose' },

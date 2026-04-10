@@ -10,7 +10,15 @@ import { Companies } from '../../../entity/company';
   templateUrl: './company-register.component.html',
   styleUrl: './company-register.component.css',
 })
-export class CompanyRegisterComponent extends Companies{
-
+export class CompanyRegisterComponent{
+  company: Companies = {
+    id: 0,
+    nameCompany: '',
+    mail: '',
+    password: '',
+    province: "",
+    WhoAreWe: '',
+    sectorType: ''
+  };
   
 }

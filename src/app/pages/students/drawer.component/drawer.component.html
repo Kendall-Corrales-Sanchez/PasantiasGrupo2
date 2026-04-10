@@ -8,28 +8,28 @@
 
   <ng-template #header>
     <div class="drawer-header">
-      <span class="drawer-header-title">{{ pasantia?.company }}</span>
+      <span class="drawer-header-title">{{ pasantia?.companyName }}</span>
     </div>
   </ng-template>
 
   <div class="drawer-body" *ngIf="pasantia">
-    <h2 class="drawer-title">{{ pasantia.nameJob }}</h2>
+    <h2 class="drawer-title">{{ pasantia.nameInternship }}</h2>
 
     <div class="drawer-detail">
       <span class="detail-label">Empresa:</span>
-      <span>{{ pasantia.company }}</span>
+      <span>{{ pasantia.companyName }}</span>
     </div>
     <div class="drawer-detail">
       <span class="detail-label">Carrera:</span>
-      <span>{{ pasantia.carrer }}</span>
+      <span>{{ pasantia.carrerInteresting }}</span>
     </div>
     <div class="drawer-detail">
       <span class="detail-label">Modalidad:</span>
-      <span>{{ pasantia.mode }}</span>
+      <span>{{ pasantia.modeName }}</span>
     </div>
     <div class="drawer-detail">
       <span class="detail-label">Ubicación:</span>
-      <span>{{ pasantia.ubication }}</span>
+      <span>{{ pasantia.provinceName }}</span>
     </div>
     <div class="drawer-detail">
       <span class="detail-label">Remuneración:</span>
