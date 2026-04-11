@@ -1,15 +1,17 @@
-export interface Intership {
+// entity/intership-detail.ts
+export interface IntershipDetail {
   id: number;
   nameInternship: string;
   description: string;
-  funcionality: string;
   remuneration: string;
   requirement: string;
   expirationDate: string;
   day: string;
   starTime: string;
   finishTime: string;
-  province_id: number;
-  mode_id: number;
-  company_id: number;
+  companyName: string;
+  companyImage: string;
+  modeName: string;
+  provinceName: string;
+  carrerInteresting: string;
 }

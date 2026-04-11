@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DrawerModule } from 'primeng/drawer';
 import { ButtonModule } from 'primeng/button';
 import { Intership } from '../../../entity/intership';
+import { IntershipDetail } from '../../../entity/internshipDetails';
 @Component({
   selector: 'app-drawer',
   imports: [CommonModule, DrawerModule, ButtonModule],
@@ -11,7 +12,7 @@ import { Intership } from '../../../entity/intership';
   standalone: true
 })
 export class DrawerComponent {
-  @Input() pasantia: Intership | null = null;
+  @Input() pasantia: IntershipDetail | null = null;
   @Output() onCerrar = new EventEmitter<void>();
   visible = model(false);
 
