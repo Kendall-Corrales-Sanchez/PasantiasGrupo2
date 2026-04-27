@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { FilterComponent } from '../filter.component/filter.component';
 import { IntershipDetail } from '../../../entity/internshipDetails';
 import { IntershipService } from '../../../service/intership/intership-service';
+import { Intership } from '../../../entity/intership';
 
 @Component({
   selector: 'app-pasantias',
@@ -17,15 +18,31 @@ import { IntershipService } from '../../../service/intership/intership-service';
 })
 export class IntershipComponent implements OnInit {
 
+  internship: Intership = { 
+  id: 0,
+  nameInternship: "",
+  description: "",
+  funcionality: "",
+  remuneration: "",
+  requirement: "",
+  expirationDate: "",
+  day: "",
+  starTime: "",
+  finishTime: "",
+  province_id: 0,
+  mode_id: 0,
+  company_id:  0
+  }
+
   @Output() verMasClick = new EventEmitter<IntershipDetail>();
 
   interships = signal<IntershipDetail[]>([]);
   loading = signal<boolean>(true);
 
-  constructor(private intershipService: IntershipService) {}
+  constructor(private intershipService: IntershipService) { }
 
   ngOnInit() {
-    this.intershipService.getAllInterships().subscribe({
+    this.intershipService.listInterships().subscribe({
       next: (data) => {
         this.interships.set(data);
         this.loading.set(false);
@@ -35,6 +52,10 @@ export class IntershipComponent implements OnInit {
         this.loading.set(false);
       }
     });
+  }
+
+  createInternship() {
+    this
   }
 
   verMas(item: IntershipDetail) {
